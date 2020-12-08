@@ -1,0 +1,14 @@
+.card{
+	display:inline-block;
+}
+
+.card-group{
+	align-self: center;
+	padding: 10px;
+
+}
+
+.card-header{
+	text-align: center;
+}
+
