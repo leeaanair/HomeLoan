@@ -1,4 +1,4 @@
-<div> 
+<div *ngIf="router.url === '/'"> 
 <mat-horizontal-stepper [linear] = "true" #stepper>
    <mat-step [stepControl] = "firstFormGroup">
       <form [formGroup] = "firstFormGroup">
