@@ -9,13 +9,14 @@ import { LoginregComponent } from './loginreg/loginreg.component';
 import { FooterComponent } from './footer/footer.component';
 import{AdminLoginComponent} from './admin-login/admin-login.component';
 
+
 const routes: Routes = [
   {path: 'calculator', component: ElgCalComponent},
   // {
   //   path:'', component: ImageComponentComponent}
   {path: 'login', component:LoginregComponent},
-  {path: 'adminlogin', component:AdminLoginComponent},
-];
+  {path: 'adminlogin', component:AdminLoginComponent}
+  ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

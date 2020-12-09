@@ -1,4 +1,3 @@
-
         <div class="container">
        
             <div class="row">
@@ -6,7 +5,7 @@
                  <div class="form-group">
                      <label>First Name</label>
                      <div class="inputWithIcon inputIconBg">
-                     <input type="text" class="form-control form-control-sm" name="fname" placeholder="First Name" [formControl]="firstnameControl">
+                     <input type="text" class="form-control form-control-sm" name="fname" placeholder="First Name" [formControl]="firstnameControl"> 
                      <i class="fa fa-user fa-lg fa-fw" aria-hidden="true"></i>
                      <span *ngIf="firstnameControl.hasError('required') && firstnameControl.dirty"class = "text-danger">First name required!</span> 
                      <span *ngIf="!firstnameControl.hasError('pattern') && firstnameControl.hasError('minlength') && firstnameControl.dirty"class = "text-danger">name must be minimum of 3 letters</span>
@@ -26,7 +25,7 @@
                      <div class="form-group">
                      <label>Email</label>
                      <div class="inputWithIcon inputIconBg">
-                     <input type="text" class="form-control form-control-sm" name="name" placeholder="abc@company.com" [formControl]="emailControl">
+                     <input type="text" class="form-control form-control-sm" name="emailId" placeholder="abc@company.com" [formControl]="emailControl">
                      <i class="fa fa-envelope fa-lg fa-fw" aria-hidden="true"></i>
                      <span *ngIf="emailControl.hasError('required') && emailControl.dirty"class = "text-danger">Email required!!</span>
                      <span *ngIf="emailControl.hasError('pattern') && emailControl.dirty"class = "text-danger">Enter valid Email</span>
@@ -55,8 +54,15 @@
                         </div>
 
              </form>   
-         </div>
-        
+
+                    <div class="alert" *ngIf="isRegisterRight==0">
+                            User already registered!    
+                    </div>
+
+
+         </div>   
+
+     
         </div>
 
 

@@ -62,3 +62,8 @@ form {
     color: #fff;
     background-color:#4B0082;
   }
+
+  .alert{
+
+    color : red;
+  }

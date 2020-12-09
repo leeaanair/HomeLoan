@@ -1,0 +1,12 @@
+package com.telusko.spring.spring1.controller;
+
+@Controller
+public class HomeController {
+	
+	@RequestMapping("/home")
+	public String showHome() {
+		
+		return "homepage";
+	}
+
+}

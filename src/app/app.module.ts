@@ -22,6 +22,8 @@ import {LoginregComponent} from './loginreg/loginreg.component';
 import {MatTabsModule} from '@angular/material/tabs';
 import { FooterComponent } from './footer/footer.component';
 import {AdminLoginComponent} from './admin-login/admin-login.component'
+import { CustomerServiceService } from './services/customer-service.service';
+
 
 @NgModule({
   declarations: [
@@ -53,7 +55,7 @@ import {AdminLoginComponent} from './admin-login/admin-login.component'
     MatSelectModule,
     MatTabsModule
           ],
-  providers: [],
+  providers: [CustomerServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

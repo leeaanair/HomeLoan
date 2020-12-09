@@ -1,0 +1,61 @@
+package com.telusko.spring.spring1.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.telusko.spring.spring1.AOTCharacter;
+
+@Controller
+public class HomeController {
+	
+//passing single variable
+//Method1	
+//	@RequestMapping("/home")
+//	public String showHome(HttpServletRequest request, Model model) {
+//		String name = request.getParameter("name");
+//		System.out.println("hi");
+//		model.addAttribute("name", name);
+//		return "homepage";
+//	}
+
+////Method2
+//	@RequestMapping("/home")
+//	public String showHome(@RequestParam("name") String name, Model model) {
+//		model.addAttribute("name", name);
+//		return "homepage";
+//	}
+
+////Method3
+//	@RequestMapping("/home")
+//	public String showHome() {
+//		return "homepage";
+//	}
+
+////Method 4	
+//	@RequestMapping("/home")
+//	public ModelAndView showHome(@RequestParam("name") String name) {
+//		ModelAndView mv = new ModelAndView();
+//		System.out.println(name);
+//		mv.addObject("name", name);
+//		mv.setViewName("homepage");		//write the jsp page
+//		return mv;
+//	}	
+
+//passing a whole object
+	
+////Method 1
+//	@RequestMapping("/home")
+//	public String showHome(@ModelAttribute("aotCharacter") AOTCharacter aotCharacter) {
+//		return "homepage-object";
+//	}	
+
+//Method 2
+	@RequestMapping("/home")
+	public String showHome(@ModelAttribute("aotCharacter") AOTCharacter aotCharacter) {
+		return "homepage-object";
+	}	
+	
+	
+}
