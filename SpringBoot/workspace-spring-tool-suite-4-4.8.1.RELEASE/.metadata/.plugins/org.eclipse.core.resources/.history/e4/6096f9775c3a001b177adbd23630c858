@@ -1,11 +1,7 @@
 package com.lti.spring.HomeLoan.controller;
 
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 import java.util.List;
 import java.util.Optional;
-
-import javax.xml.bind.DatatypeConverter;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -32,38 +28,32 @@ public class HomeController {
     
     
     @PostMapping(value="/customer", consumes = "application/json")
-    public int addUser(@RequestBody Customer customer) throws NoSuchAlgorithmException {
-    	    	
+    public int addUser(@RequestBody Customer customer) {
+    	
+    	System.out.println("This was called");
+    	System.out.println(customer);
+    	
     	Optional<Customer> customer1 = customerDao.findById(customer.getEmailId()); 
-
+    	System.out.println(customer1);
     	if(customer1.isEmpty()) {
-    		
-    		
-    	    MessageDigest md = MessageDigest.getInstance("MD5");
-    	    md.update(customer.getPassword().getBytes());
-    	    byte[] digest = md.digest();
-    	    String myHash = DatatypeConverter.printHexBinary(digest).toUpperCase();
-    	    
-    		customer.setPassword(myHash);
+    		System.out.println("it's empty");
         	customerDao.save(customer);
         	return 2;
 
     	}
     	else{
-    		return 0;
+    		return 1;
     	}
 
     }
     
     @PostMapping(value="/loginuser", consumes = "application/json")
-    public int loginUser(@RequestBody Customer customer) throws NoSuchAlgorithmException {
-    	
-	    MessageDigest md = MessageDigest.getInstance("MD5");
-	    md.update(customer.getPassword().getBytes());
-	    byte[] digest = md.digest();
-	    String myHash = DatatypeConverter.printHexBinary(digest).toUpperCase();
-
-    	List<Customer> customer1 = customerDao.findCustomerByEmailAndPassword(customer.getEmailId(), myHash);
+    public int loginUser(@RequestBody Customer customer) {
+    	System.out.println(customer);
+    	System.out.println(customer.getEmailId());
+    	System.out.println(customer.getPassword());
+    	List<Customer> customer1 = customerDao.findCustomerByEmailAndPassword(customer.getEmailId(), customer.getPassword());
+    	System.out.println(customer1);
     	if(customer1.isEmpty()) {
     		return 0;
     	}

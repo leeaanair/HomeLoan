@@ -33,11 +33,15 @@ public class HomeController {
     
     @PostMapping(value="/customer", consumes = "application/json")
     public int addUser(@RequestBody Customer customer) throws NoSuchAlgorithmException {
-    	    	
+    	
+    	System.out.println("This was called");
+    	System.out.println(customer);
+    	
     	Optional<Customer> customer1 = customerDao.findById(customer.getEmailId()); 
-
+    	System.out.println(customer1);
     	if(customer1.isEmpty()) {
     		
+    		System.out.println("it's empty");
     		
     	    MessageDigest md = MessageDigest.getInstance("MD5");
     	    md.update(customer.getPassword().getBytes());
@@ -57,6 +61,9 @@ public class HomeController {
     
     @PostMapping(value="/loginuser", consumes = "application/json")
     public int loginUser(@RequestBody Customer customer) throws NoSuchAlgorithmException {
+//    	System.out.println(customer);
+//    	System.out.println(customer.getEmailId());
+//    	System.out.println(customer.getPassword());
     	
 	    MessageDigest md = MessageDigest.getInstance("MD5");
 	    md.update(customer.getPassword().getBytes());
@@ -64,6 +71,7 @@ public class HomeController {
 	    String myHash = DatatypeConverter.printHexBinary(digest).toUpperCase();
 
     	List<Customer> customer1 = customerDao.findCustomerByEmailAndPassword(customer.getEmailId(), myHash);
+    	System.out.println(customer1);
     	if(customer1.isEmpty()) {
     		return 0;
     	}
