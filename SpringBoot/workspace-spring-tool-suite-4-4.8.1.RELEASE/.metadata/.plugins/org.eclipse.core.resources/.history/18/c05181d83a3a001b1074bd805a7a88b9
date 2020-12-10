@@ -1,0 +1,53 @@
+package com.lti.spring.HomeLoan.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.lti.spring.HomeLoan.Customer;
+import com.lti.spring.HomeLoan.dao.CustomerDao;
+
+@RestController
+@CrossOrigin(origins = "*")
+public class HomeController {
+	
+	@Autowired
+	private CustomerDao customerDao;
+
+    @RequestMapping("/")
+    public String showHome() {
+  
+    	return "home";
+    }
+    
+    
+    @PostMapping(value="/customer", consumes = "application/json")
+    public String addUser(@RequestBody Customer customer) {
+    	
+    	System.out.println("This was called");
+    	System.out.println(customer);
+    	customerDao.save(customer);
+    	return "success";
+    }
+    
+    @PostMapping(value="/login", consumes = "application/json")
+    public String loginUser(@RequestBody Customer customer) {
+    	System.out.println(customer);
+    	System.out.println("This was called");
+    	List<Customer> customer1 = customerDao.findCustomerByEmailAndPassword(customer.getEmailId(), customer.getPassword());
+    	System.out.println(customer1);
+    	if(customer1.isEmpty()) {
+    		return "no values";
+    	}
+    	else {
+        	return "success";    		
+    	}
+    }
+
+	
+}

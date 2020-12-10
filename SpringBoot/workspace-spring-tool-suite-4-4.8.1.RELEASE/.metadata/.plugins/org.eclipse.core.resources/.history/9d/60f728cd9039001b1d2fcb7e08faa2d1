@@ -1,0 +1,5 @@
+package com.telusko.spring.spring2.dao;
+
+public interface AOTDao {
+
+}

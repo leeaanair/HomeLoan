@@ -11,16 +11,14 @@ import{AdminLoginComponent} from './admin-login/admin-login.component';
 import{FaqComponent} from './faq/faq.component';
 import{AboutComponent} from './about/about.component';
 
+
 const routes: Routes = [
   {path: 'calculator', component: ElgCalComponent},
-  // {
-  //   path:'', component: ImageComponentComponent}
   {path: 'login', component:LoginregComponent},
+  {path: 'adminlogin', component:AdminLoginComponent},
   {path: 'faq', component:FaqComponent},
   {path: 'adminlogin', component:AdminLoginComponent},
   {path: 'aboutus', component:AboutComponent}
-  
-
 ];
 
 @NgModule({
