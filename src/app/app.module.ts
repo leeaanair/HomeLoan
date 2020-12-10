@@ -24,6 +24,10 @@ import { FooterComponent } from './footer/footer.component';
 import {AdminLoginComponent} from './admin-login/admin-login.component'
 import { CustomerServiceService } from './services/customer-service.service';
 
+import {AdminLoginComponent} from './admin-login/admin-login.component';
+import { FaqComponent } from './faq/faq.component';
+import { AboutComponent } from './about/about.component';
+
 
 @NgModule({
   declarations: [
@@ -39,7 +43,8 @@ import { CustomerServiceService } from './services/customer-service.service';
     LoginComponent,
     LoginregComponent,
     FooterComponent,
-    AdminLoginComponent
+    AdminLoginComponent,
+    AboutComponent
       ],
   imports: [
     BrowserModule,
