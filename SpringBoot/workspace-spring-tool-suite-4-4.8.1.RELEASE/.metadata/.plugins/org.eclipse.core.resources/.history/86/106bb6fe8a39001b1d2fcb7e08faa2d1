@@ -1,0 +1,20 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %> 
+   
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form:form action="addCharacter" method="post">
+		First name: <form:input type="text" name="fname"/>
+		Middle Name: <form:input type="text" name="mname"/>
+		Last Name: <form:input type="text" name="lname" />
+		Location: <form:input type="text" name="location" />		
+		<form:input type="submit" value="Submit" />
+	</form:form>
+</body>
+</html>

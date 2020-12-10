@@ -1,0 +1,25 @@
+package com.telusko.spring.spring2.controller;
+
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.telusko.spring.spring2.AOTCharacter;
+
+public class HomeController {
+	
+	@RequestMapping("/home")
+	public String showHome(Model model) {
+		
+		AOTCharacter aotCharacter = new AOTCharacter();
+		model.addAttribute("character", aotCharacter);
+		return "home";
+	}
+	
+	@RequestMapping("/addCharacter")
+	public String processForm(@ModelAttribute("character") AOTCharacter aotCharacter) {
+		
+		return "success-page";
+	}
+
+}

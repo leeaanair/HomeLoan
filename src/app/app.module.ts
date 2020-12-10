@@ -21,9 +21,19 @@ import {LoginComponent} from './login/login.component';
 import {LoginregComponent} from './loginreg/loginreg.component';
 import {MatTabsModule} from '@angular/material/tabs';
 import { FooterComponent } from './footer/footer.component';
-import {AdminLoginComponent} from './admin-login/admin-login.component';
+
+
 import { LoanTrackerComponent } from './loan-tracker/loan-tracker.component';
 import { PersonalDetailsComponent } from './personal-details/personal-details.component'
+
+import {AdminLoginComponent} from './admin-login/admin-login.component'
+import { CustomerServiceService } from './services/customer-service.service';
+
+import {AdminLoginComponent} from './admin-login/admin-login.component';
+import { FaqComponent } from './faq/faq.component';
+import { AboutComponent } from './about/about.component';
+
+
 
 @NgModule({
   declarations: [
@@ -40,8 +50,12 @@ import { PersonalDetailsComponent } from './personal-details/personal-details.co
     LoginregComponent,
     FooterComponent,
     AdminLoginComponent,
+
     LoanTrackerComponent,
-    PersonalDetailsComponent
+    PersonalDetailsComponent,
+
+    AboutComponent
+
       ],
   imports: [
     BrowserModule,
@@ -57,7 +71,7 @@ import { PersonalDetailsComponent } from './personal-details/personal-details.co
     MatSelectModule,
     MatTabsModule
           ],
-  providers: [],
+  providers: [CustomerServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

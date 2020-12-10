@@ -1,0 +1,29 @@
+package com.telusko.spring.spring1.controller;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class HomeController {
+	
+//Method1	
+//	@RequestMapping("/home")
+//	public String showHome(HttpServletRequest request, Model model) {
+//		String name = request.getParameter("name");
+//		System.out.println("hi");
+//		model.addAttribute("name", name);
+//		return "homepage";
+//	}
+
+//Method2
+	@RequestMapping("/home")
+	public String showHome(@RequestParam("name") String name, Model model) {
+		model.addAttribute("name", name);
+		return "homepage";
+	}
+
+	
+}

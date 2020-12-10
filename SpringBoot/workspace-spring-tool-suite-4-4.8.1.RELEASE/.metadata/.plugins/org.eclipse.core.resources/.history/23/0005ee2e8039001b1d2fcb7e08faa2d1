@@ -1,0 +1,15 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Heelo</title>
+</head>
+<body>
+<!--  Heelo ${name} --> <!-- for method 1 and 2 -->	
+<!-- hello ${param.name} --> <!-- method 3 -->
+mdodel	hello ${name} <!--  -->
+
+</body>
+</html>
