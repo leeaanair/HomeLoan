@@ -1,0 +1,62 @@
+
+        <div class="container">
+       
+            <div class="row">
+             <form [formGroup]="regForm" (ngSubmit)="onSubmit()">
+                 <div class="form-group">
+                     <label>First Name</label>
+                     <div class="inputWithIcon inputIconBg">
+                     <input type="text" class="form-control form-control-sm" name="fname" placeholder="First Name" [formControl]="firstnameControl">
+                     <i class="fa fa-user fa-lg fa-fw" aria-hidden="true"></i>
+                     <span *ngIf="firstnameControl.hasError('required') && firstnameControl.dirty"class = "text-danger">First name required!</span> 
+                     <span *ngIf="!firstnameControl.hasError('pattern') && firstnameControl.hasError('minlength') && firstnameControl.dirty"class = "text-danger">name must be minimum of 3 letters</span>
+                     <span *ngIf="firstnameControl.hasError('pattern') && firstnameControl.dirty"class = "text-danger">Invalid name</span>
+                    </div>
+                </div>
+                    <div class="form-group">
+                     <label>Last Name</label>
+                     <div class="inputWithIcon inputIconBg">
+                     <input type="text" class="form-control form-control-sm" name="lname" placeholder="Last Name" [formControl]="lastnameControl">
+                     <i class="fa fa-user fa-lg fa-fw" aria-hidden="true"></i>
+                     <span *ngIf="lastnameControl.hasError('required') && lastnameControl.dirty"class = "text-danger">Last name required!!</span>
+                     <span *ngIf="lastnameControl.hasError('pattern') && lastnameControl.dirty"class = "text-danger">Invalid name </span>
+                     <span *ngIf="!lastnameControl.hasError('pattern') && lastnameControl.hasError('minlength') && lastnameControl.dirty"class = "text-danger">name must be minimum of 3 letters </span>
+                    </div>
+                    </div>
+                     <div class="form-group">
+                     <label>Email</label>
+                     <div class="inputWithIcon inputIconBg">
+                     <input type="text" class="form-control form-control-sm" name="name" placeholder="abc@company.com" [formControl]="emailControl">
+                     <i class="fa fa-envelope fa-lg fa-fw" aria-hidden="true"></i>
+                     <span *ngIf="emailControl.hasError('required') && emailControl.dirty"class = "text-danger">Email required!!</span>
+                     <span *ngIf="emailControl.hasError('pattern') && emailControl.dirty"class = "text-danger">Enter valid Email</span>
+                    </div>
+                    </div>
+                     <div class="form-group">
+                     <label>Password</label>
+                     <div class="inputWithIcon inputIconBg">
+                     <input type="password" class="form-control form-control-sm" name="pass" placeholder="Password" [formControl]="passwordControl">
+                     <i class="fa fa-lock fa-lg fa-fw" aria-hidden="true"></i>
+                     <span *ngIf="passwordControl.hasError('required') && passwordControl.dirty"class = "text-danger">password required!!</span>
+                     <span *ngIf="passwordControl.hasError('minlength') && passwordControl.dirty"class = "text-danger">password must be atleast 6 characters long</span>
+                    </div>
+                    </div>
+                     <div class="form-group">
+                     <label>Confirm password</label>
+                     <div class="inputWithIcon inputIconBg">
+                     <input type="password" class="form-control form-control-sm" name="cpass" placeholder="Re-Enter password" [formControl]="confirmpasswordControl">
+                     <i class="fa fa-lock fa-lg fa-fw" aria-hidden="true"></i>
+                     <span *ngIf="confirmpasswordControl.hasError('required') && confirmpasswordControl.dirty"class = "text-danger">password required!!</span>
+                     <span *ngIf="confirmpasswordControl.valid && confirmpasswordControl.value != passwordControl.value" class = "text-danger">Password Doesn't match</span>
+                     </div>
+                     </div>
+                     <div class="form-group">
+                        <input type="submit" class="btn btn-primary" [disabled]="!regForm.valid" name="submit" value="Register" >
+                        </div>
+
+             </form>   
+         </div>
+        
+        </div>
+
+

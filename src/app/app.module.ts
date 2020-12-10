@@ -16,8 +16,14 @@ import { MenuComponentComponent } from './menu-component/menu-component.componen
 import { ImageComponentComponent } from './image-component/image-component.component';
 import { FeatCalcDocComponentComponent } from './feat-calc-doc-component/feat-calc-doc-component.component';
 import { StepperComponentComponent } from './stepper-component/stepper-component.component';
-
-
+import {RegisterComponent} from './register/register.component';
+import {LoginComponent} from './login/login.component';
+import {LoginregComponent} from './loginreg/loginreg.component';
+import {MatTabsModule} from '@angular/material/tabs';
+import { FooterComponent } from './footer/footer.component';
+import {AdminLoginComponent} from './admin-login/admin-login.component';
+import { FaqComponent } from './faq/faq.component';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +34,14 @@ import { StepperComponentComponent } from './stepper-component/stepper-component
     StepperComponentComponent,
     EmiCalComponent,
     routingComponent,
-    ElgCalComponent
+    ElgCalComponent,
+    RegisterComponent,
+    LoginComponent,
+    LoginregComponent,
+    FooterComponent,
+    AdminLoginComponent,
+    AboutComponent,
+   
       ],
   imports: [
     BrowserModule,
@@ -41,7 +54,8 @@ import { StepperComponentComponent } from './stepper-component/stepper-component
     MatButtonModule,
     FormsModule,
     NgxSliderModule,
-    MatSelectModule
+    MatSelectModule,
+    MatTabsModule
           ],
   providers: [],
   bootstrap: [AppComponent]
