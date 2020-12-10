@@ -1,5 +1,6 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
+    background-color: #E6F4F1;
   }
   
   .flip-card {
@@ -33,13 +34,13 @@ body {
   }
   
   .flip-card-front {
-    background-color: rgb(61, 240, 136);
-    color: black;
+    background-color: #1e6ba2;
+    color: white;
   }
   
   .flip-card-back {
-    background-color: #25a4ee;
-    color: white;
+    background-color: #EEE8A9;
+    color: black;
     transform: rotateY(180deg);
   }
 
@@ -47,9 +48,10 @@ body {
       text-align: center;
       position: relative;
   top: 5px;
-  font-size:35px;
+  font-size: 45px;
+  color: black;
   }
 
   .blank {
-      color: white;
+      color: #E6F4F1;
   }

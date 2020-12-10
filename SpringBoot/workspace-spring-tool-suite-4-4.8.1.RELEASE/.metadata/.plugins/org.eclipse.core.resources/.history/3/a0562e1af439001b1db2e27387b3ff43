@@ -1,0 +1,32 @@
+package com.lti.spring.HomeLoan;
+
+@Entity
+@Table(name="Customer")
+public class Customer {
+	
+	private String fname;
+	private String mname;
+	private String lname;
+	private String emailId;
+	private String address;
+	private String address;
+	private String password;
+	private Date dateOfBirth;
+	private String phoneNumber;
+	private String gender;
+	private String pancard;
+	p
+	
+	
+
+}
+
+dateOfBirth date,
+phoneNumber varchar2(12),
+gender varchar2(2),
+pancard varchar2(12),
+aadhaar varchar2(13),
+nationality varchar2(15),
+accountNo varchar2(13) default null,
+balance number(20, 2) default 0
+);

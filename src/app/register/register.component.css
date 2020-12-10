@@ -7,13 +7,13 @@ card{
   margin:auto;
 }
 input[type="text"]:focus {
-    border-color: #4B0082;
-    box-shadow: 0 0 0px 0#4B0082;
+    border-color: #00A093;
+    box-shadow: 0 0 0px 0#00A093;
   }
 
   input[type="password"]:focus {
-    border-color:#4B0082;
-    box-shadow: 0 0 0px 0 #4B0082;
+    border-color:#00A093;
+    box-shadow: 0 0 0px 0 #00A093;
   }
   
   .inputWithIcon input[type="text"] {
@@ -38,11 +38,11 @@ input[type="text"]:focus {
   }
   
   .inputWithIcon input[type="text"]:focus + i {
-    color: #4B0082;
+    color: #00A093;
   }
 
   .inputWithIcon input[type="password"]:focus + i {
-    color:#4B0082;
+    color:#00A093;
   }
   
   .inputWithIcon.inputIconBg i {
@@ -54,11 +54,21 @@ input[type="text"]:focus {
   
   .inputWithIcon.inputIconBg input[type="text"]:focus + i {
     color: #fff;
-    background-color:#4B0082;
+    background-color:#00A093;
     
   }
 
   .inputWithIcon.inputIconBg input[type="password"]:focus + i {
     color: #fff;
-    background-color:#4B0082;
+    background-color:#00A093;
   }
+
+  .alert{
+    color: red;
+  }
+
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #E6F4F1;
+  }
+  

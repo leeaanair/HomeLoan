@@ -1,6 +1,8 @@
 .image{
 	width: 100%;
 	height: 500px; 
+	padding: 30px;
+	background-color: #E6F4F1;
 }
 
 .button{

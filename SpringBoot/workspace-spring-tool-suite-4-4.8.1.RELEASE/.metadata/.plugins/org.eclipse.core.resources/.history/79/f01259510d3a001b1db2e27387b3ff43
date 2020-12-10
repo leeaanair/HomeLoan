@@ -1,0 +1,169 @@
+package com.lti.spring.HomeLoan;
+
+import java.util.Date;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="Customer")
+public class Customer {
+	
+	@Column(name="fname")
+	private String fname;
+	
+	@Column(name="mname")
+	private String mname;
+	
+	@Column(name="lname")
+	private String lname;
+	
+	@Id
+	@Column(name="emailid")
+	private String emailId;
+	
+	@Column(name="address")
+	private String address;
+	
+	@Column(name="password")
+	private String password;
+	
+	@Column(name="dateOfBirth")
+	private Date dateOfBirth;
+	
+	@Column(name="phoneNumber")
+	private String phoneNumber;
+	
+	@Column(name="gender")
+	private String gender;
+	
+	@Column(name="pancard")
+	private String pancard;
+	
+	@Column(name="aadhar")
+	private String aadhaar;
+	
+	@Column(name="nationality")
+	private String nationality;
+	
+	@Column(name="accountNo")
+	private String accountNumber;
+	
+	@Column(name="balance")
+	private long balance;
+
+	public String getFname() {
+		return fname;
+	}
+
+	public void setFname(String fname) {
+		this.fname = fname;
+	}
+
+	public String getMname() {
+		return mname;
+	}
+
+	public void setMname(String mname) {
+		this.mname = mname;
+	}
+
+	public String getLname() {
+		return lname;
+	}
+
+	public void setLname(String lname) {
+		this.lname = lname;
+	}
+
+	public String getEmailId() {
+		return emailId;
+	}
+
+	public void setEmailId(String emailId) {
+		this.emailId = emailId;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public Date getDateOfBirth() {
+		return dateOfBirth;
+	}
+
+	public void setDateOfBirth(Date dateOfBirth) {
+		this.dateOfBirth = dateOfBirth;
+	}
+
+	public String getPhoneNumber() {
+		return phoneNumber;
+	}
+
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}
+
+	public String getGender() {
+		return gender;
+	}
+
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+
+	public String getPancard() {
+		return pancard;
+	}
+
+	public void setPancard(String pancard) {
+		this.pancard = pancard;
+	}
+
+	public String getAadhaar() {
+		return aadhaar;
+	}
+
+	public void setAadhaar(String aadhaar) {
+		this.aadhaar = aadhaar;
+	}
+
+	public String getNationality() {
+		return nationality;
+	}
+
+	public void setNationality(String nationality) {
+		this.nationality = nationality;
+	}
+
+	public String getAccountNumber() {
+		return accountNumber;
+	}
+
+	public void setAccountNumber(String accountNumber) {
+		this.accountNumber = accountNumber;
+	}
+
+	public long getBalance() {
+		return balance;
+	}
+
+	public void setBalance(long balance) {
+		this.balance = balance;
+	}
+	
+}

@@ -1,0 +1,61 @@
+package com.telusko.spring.spring2.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.telusko.spring.spring2.AOTCharacter;
+import com.telusko.spring.spring2.dao.AOTDao;
+
+@Controller
+public class HomeController {
+	
+	@Autowired
+	AOTDao aotDao;
+	
+	@RequestMapping("/home")
+	public String showHome(Model model) {
+		
+		AOTCharacter aotCharacter = new AOTCharacter();
+		model.addAttribute("character", aotCharacter);
+		return "home";
+	}
+	
+	@RequestMapping("/addCharacter")
+	public String processForm(@ModelAttribute("character") AOTCharacter aotCharacter) {
+		
+		aotDao.save(aotCharacter);
+		return "home";
+	}
+
+	@RequestMapping("/fetchCharacter")
+	public ModelAndView getCharacter(@RequestParam int id) {
+		
+		ModelAndView mv = new ModelAndView("showCharacter");
+		AOTCharacter aotCharacter = aotDao.findById(id).orElse(new AOTCharacter());
+		mv.addObject("aotCharacter", aotCharacter);
+		return mv;
+	}
+
+	@RequestMapping("/updateCharacter")
+	public String updateCharacter(@ModelAttribute("character") AOTCharacter aotCharacter) {
+		
+		aotDao.save(aotCharacter);
+		return "home";
+	}
+
+
+	@RequestMapping("/deleteCharacter")
+	public String deleteCharacter(@RequestParam int id) {
+		AOTCharacter aotCharacter = aotDao.findById(id).orElse(new AOTCharacter());
+		if(aotCharacter != null) {
+			aotDao.delete(aotCharacter);
+		}
+		return "home";
+	}
+
+}
