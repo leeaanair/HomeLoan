@@ -20,6 +20,7 @@ const routes: Routes = [
   {path: 'adminlogin', component:AdminLoginComponent},
   {path: 'aboutus', component:AboutComponent}
   
+
 ];
 
 @NgModule({
@@ -27,4 +28,6 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+
 export const routingComponent = []
+
