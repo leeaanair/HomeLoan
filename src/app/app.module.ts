@@ -21,7 +21,11 @@ import {LoginComponent} from './login/login.component';
 import {LoginregComponent} from './loginreg/loginreg.component';
 import {MatTabsModule} from '@angular/material/tabs';
 import { FooterComponent } from './footer/footer.component';
-import {AdminLoginComponent} from './admin-login/admin-login.component'
+
+import {AdminLoginComponent} from './admin-login/admin-login.component';
+import { FaqComponent } from './faq/faq.component';
+import { AboutComponent } from './about/about.component';
+
 
 @NgModule({
   declarations: [
@@ -37,7 +41,10 @@ import {AdminLoginComponent} from './admin-login/admin-login.component'
     LoginComponent,
     LoginregComponent,
     FooterComponent,
-    AdminLoginComponent
+    AdminLoginComponent,
+    AboutComponent,
+   
+
       ],
   imports: [
     BrowserModule,
