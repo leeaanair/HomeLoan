@@ -1,0 +1,190 @@
+<div class="container">
+
+    <div class="row">
+        <form [formGroup]="regForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label>First Name</label>
+                <div>
+                    <input type="text" class="form-control form-control-sm" name="fname" placeholder="First Name"
+                        [formControl]="firstnameControl">
+
+                    <span *ngIf="firstnameControl.hasError('required') && firstnameControl.dirty"
+                        class="text-danger">First name required!</span>
+                    <span
+                        *ngIf="!firstnameControl.hasError('pattern') && firstnameControl.hasError('minlength') && firstnameControl.dirty"
+                        class="text-danger">name must be minimum of 3 letters</span>
+                    <span *ngIf="firstnameControl.hasError('pattern') && firstnameControl.dirty"
+                        class="text-danger">Invalid name</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Middle Name</label>
+                <div>
+                    <input type="text" class="form-control form-control-sm" name="mname" placeholder="Middle Name"
+                        [formControl]="middlenameControl">
+
+                    <span *ngIf="middlenameControl.hasError('required') && middlenameControl.dirty"
+                        class="text-danger">Middle name required!</span>
+                    <span
+                        *ngIf="!middlenameControl.hasError('pattern') && middlenameControl.hasError('minlength') && middlenameControl.dirty"
+                        class="text-danger">name must be minimum of 3 letters</span>
+                    <span *ngIf="middlenameControl.hasError('pattern') && middlenameControl.dirty"
+                        class="text-danger">Invalid name</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Last Name</label>
+                <div>
+                    <input type="text" class="form-control form-control-sm" name="lname" placeholder="Last Name"
+                        [formControl]="lastnameControl">
+
+                    <span *ngIf="lastnameControl.hasError('required') && lastnameControl.dirty" class="text-danger">Last
+                        name required!!</span>
+                    <span *ngIf="lastnameControl.hasError('pattern') && lastnameControl.dirty"
+                        class="text-danger">Invalid name </span>
+                    <span
+                        *ngIf="!lastnameControl.hasError('pattern') && lastnameControl.hasError('minlength') && lastnameControl.dirty"
+                        class="text-danger">name must be minimum of 3 letters </span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Email</label>
+                <div class="inputWithIcon inputIconBg">
+                    <input type="text" class="form-control form-control-sm" name="name" placeholder="abc@company.com"
+                        [formControl]="emailControl">
+
+                    <span *ngIf="emailControl.hasError('required') && emailControl.dirty" class="text-danger">Email
+                        required!!</span>
+                    <span *ngIf="emailControl.hasError('pattern') && emailControl.dirty" class="text-danger">Enter valid
+                        Email</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <div class="inputWithIcon inputIconBg">
+                    <input type="password" class="form-control form-control-sm" name="pass" placeholder="Password"
+                        [formControl]="passwordControl">
+
+                    <span *ngIf="passwordControl.hasError('required') && passwordControl.dirty"
+                        class="text-danger">password required!!</span>
+                    <span *ngIf="passwordControl.hasError('minlength') && passwordControl.dirty"
+                        class="text-danger">password must be atleast 6 characters long</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Confirm password</label>
+                <div class="inputWithIcon inputIconBg">
+                    <input type="password" class="form-control form-control-sm" name="cpass"
+                        placeholder="Re-Enter password" [formControl]="confirmpasswordControl">
+
+                    <span *ngIf="confirmpasswordControl.hasError('required') && confirmpasswordControl.dirty"
+                        class="text-danger">password required!!</span>
+                    <span *ngIf="confirmpasswordControl.valid && confirmpasswordControl.value != passwordControl.value"
+                        class="text-danger">Password Doesn't match</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Nationality</label>
+                <div>
+                    <input type="text" class="form-control form-control-sm" name="nationality"
+                        placeholder="Enter Country" [formControl]="nationalityControl">
+
+                    <span *ngIf="nationalityControl.hasError('required') && nationalityControl.dirty"
+                        class="text-danger">Country required!!</span>
+                    <span *ngIf="nationalityControl.hasError('pattern') && nationalityControl.dirty"
+                        class="text-danger">Invalid name </span>
+                    <span
+                        *ngIf="!nationalityControl.hasError('pattern') && nationalityControl.hasError('minlength') && nationalityControl.dirty"
+                        class="text-danger">name must be minimum of 3 letters </span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Aadhar No.</label>
+                <div>
+                    <input type="number" class="form-control form-control-sm" name="aadharno"
+                        placeholder="Enter Aadhar No." [formControl]="anoControl">
+
+                    <span *ngIf="anoControl.hasError('required') && anoControl.dirty" class="text-danger">Aadhar Number
+                        required!!</span>
+                    <!-- <span *ngIf="anoControl.hasError('pattern') && anoControl.dirty"class = "text-danger">Invalid name </span> -->
+                    <span *ngIf="anoControl.hasError('min') && anoControl.dirty" class="text-danger">Number must be
+                        of 12 digits </span>
+                        <span *ngIf="anoControl.hasError('max')" class="text-danger">Number must be
+                            of 12 digits </span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Pan No.</label>
+                <div>
+                    <input type="text" class="form-control form-control-sm" name="panno"
+                        placeholder="Enter Pan No." [formControl]="pnoControl">
+
+                    <span *ngIf="pnoControl.hasError('required') && pnoControl.dirty" class="text-danger">Pan Number
+                        required!!</span>
+                    <!-- <span *ngIf="anoControl.hasError('pattern') && anoControl.dirty"class = "text-danger">Invalid name </span> -->
+                    <span *ngIf="pnoControl.hasError('minlength') && pnoControl.dirty" class="text-danger">Pan no. must be
+                         of 10 letters </span>
+                         <span *ngIf="pnoControl.hasError('maxlength')" class="text-danger">Pan no. must be
+                            of 10 letters </span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Mobile No.</label>
+                <div>
+                    <input type="number" class="form-control form-control-sm" name="mobileno"
+                        placeholder="Enter Mobile No." [formControl]="mobilenoControl">
+
+                    <span *ngIf="mobilenoControl.hasError('required') && mobilenoControl.dirty" class="text-danger">Mobile Number
+                        required!!</span>
+                    <!-- <span *ngIf="anoControl.hasError('pattern') && anoControl.dirty"class = "text-danger">Invalid name </span> -->
+                    <span *ngIf="mobilenoControl.hasError('min') && mobilenoControl.dirty" class="text-danger">Mobile Number must be 10 digits 
+
+                    </span>
+                    <span *ngIf="mobilenoControl.hasError('max')" class="text-danger">Mobile Number must be max 10 digits 
+
+                    </span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Gender</label>
+                <div>
+                    <!-- <input type="number" class="form-control form-control-sm" name="gender"
+                        placeholder="Enter Pan No." [formControl]="genderControl"> -->
+                        <input type="radio"  value="male" [formControl]="genderControl"> Male
+                        <input type="radio"  value="female" [formControl]="genderControl"> Female
+                        <span *ngIf="genderControl.hasError('required') && genderControl.dirty" class="text-danger">
+                            required!!</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Date of Birth </label>
+                <div>
+                    <input type="text" class="form-control form-control-sm" name="nationality"
+                        placeholder="Enter date in DD-MM-YYYY" [formControl]="dateControl">
+
+                    <span *ngIf="dateControl.hasError('required') && dateControl.dirty"
+                        class="text-danger">Date  required!!</span>
+                    <!-- <span *ngIf="dateControl.hasError('pattern') && dateControl.dirty"
+                        class="text-danger">Invalid date</span> -->
+                    <!-- <span
+                        *ngIf="!nationalityControl.hasError('pattern') && nationalityControl.hasError('minlength') && nationalityControl.dirty"
+                        class="text-danger">name must be minimum of 3 letters </span> -->
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <input type="submit" class="btn btn-primary" [disabled]="!regForm.valid" name="submit" value="Register">
+            </div>
+
+        </form>
+    </div>
+
+</div>

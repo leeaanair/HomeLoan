@@ -8,17 +8,26 @@ import {EmiCalComponent} from './emi-cal/emi-cal.component';
 import { LoginregComponent } from './loginreg/loginreg.component';
 import { FooterComponent } from './footer/footer.component';
 import{AdminLoginComponent} from './admin-login/admin-login.component';
+
+import {LoanTrackerComponent} from './loan-tracker/loan-tracker.component';  
+
 import{FaqComponent} from './faq/faq.component';
 import{AboutComponent} from './about/about.component';
+
 
 
 const routes: Routes = [
   {path: 'calculator', component: ElgCalComponent},
   {path: 'login', component:LoginregComponent},
   {path: 'adminlogin', component:AdminLoginComponent},
+
+  {path: 'loantracker', component:LoanTrackerComponent},
+
+
   {path: 'faq', component:FaqComponent},
-  {path: 'adminlogin', component:AdminLoginComponent},
+ 
   {path: 'aboutus', component:AboutComponent}
+
 ];
 
 @NgModule({
