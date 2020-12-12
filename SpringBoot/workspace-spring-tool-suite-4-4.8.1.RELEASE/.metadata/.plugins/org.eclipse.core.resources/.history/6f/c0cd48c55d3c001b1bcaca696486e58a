@@ -1,0 +1,5 @@
+package com.lti.spring.HomeLoan.dao;
+
+public interface FileStorageService {
+
+}

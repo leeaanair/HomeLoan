@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 
 import { CustomerServiceService } from '../services/customer-service.service';
+import { SessionService } from '../services/session.service';
 // import { CustomerServiceService } from '../services/customer-service.service';
 
 import { Customer } from '../class/customer';
@@ -26,7 +27,7 @@ export class LoginComponent implements OnInit {
     password1Control : FormControl;
    
   constructor(formBuilder : FormBuilder, private route: ActivatedRoute, 
-      private router: Router, private customerService: CustomerServiceService ) {
+      private router: Router, private customerService: CustomerServiceService, public sessionService : SessionService ) {
 
       this.customer = new Customer();
 
@@ -56,12 +57,18 @@ export class LoginComponent implements OnInit {
   gotoUserList(result) {
 
       if(result==2){
+      this.sessionService.set("UserId", this.customer.emailId);
       this.router.navigate(['/']);
 
     }
     else{
       this.isLoginRight = 0;
     }
+  }
+
+
+  forgot(){
+    this.router.navigate(['/forgot']);
   }
 
 }

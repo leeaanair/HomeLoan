@@ -67,3 +67,7 @@ form {
 
     color : red;
   }
+
+  .forgot-btn{
+    float: right;
+  }

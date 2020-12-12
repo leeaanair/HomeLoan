@@ -60,10 +60,13 @@ export class RegisterComponent {
 
   gotoUserList(result) {
 
+  //successfully registered
     if(result==2){
-      this.router.navigate(['/']);
+      this.router.navigate(['/']);     
 
     }
+    
+    //already registered
     else{
       this.isRegisterRight = 0;
     }

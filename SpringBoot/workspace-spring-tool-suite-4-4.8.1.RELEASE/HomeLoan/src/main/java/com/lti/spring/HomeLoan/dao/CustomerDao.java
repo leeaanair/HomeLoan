@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import com.lti.spring.HomeLoan.Customer;
+import com.lti.spring.HomeLoan.model.Customer;
 
 @Repository
 public interface CustomerDao extends CrudRepository<Customer, String> {

@@ -1,0 +1,81 @@
+  <form>
+    <table>
+      <tr>
+        <td><label class="btn btn-default"> Pan Card</label></td>
+       <td> <input type="file" (change)="selectFile($event)" /></td>
+      
+    
+    <td><button class="btn btn-primary" [disabled]="!selectedFiles" (click)="upload(0)">
+      Upload
+    </button></td>
+  </tr>
+  
+  <tr>
+    <td><label class="btn btn-default"> Voter Id</label></td>
+     <td><input type="file" (change)="selectFile($event)" /></td>
+    
+  <td><button class="btn btn-primary" [disabled]="!selectedFiles" (click)="upload(1)">
+    Upload
+  </button></td>
+  </tr>
+  
+  <tr>
+    <td><label class="btn btn-default"> Salary Slip</label></td>
+      <td><input type="file" (change)="selectFile($event)" /></td>
+    
+    <td><button class="btn btn-primary" [disabled]="!selectedFiles" (click)="upload(2)">
+      Upload
+    </button></td>
+  </tr>
+  
+  <tr>
+    <td><label class="btn btn-default"> LOA </label></td>
+     <td><input type="file" (change)="selectFile($event)" /></td> 
+   
+    <td><button class="btn btn-primary" [disabled]="!selectedFiles" (click)="upload(3)">
+      Upload
+    </button></td>
+  </tr>
+    
+  <tr>
+    <td><label class="btn btn-default"> NOC</label></td>
+      <td><input type="file" (change)="selectFile($event)" /></td>
+    
+  <td><button class="btn btn-primary" [disabled]="!selectedFiles" (click)="upload(4)">
+    Upload
+  </button></td>
+  </tr>
+    
+  <tr>
+    <td><label class="btn btn-default"> NOC from Builder</label></td>
+      <td><input type="file" (change)="selectFile($event)" /></td>
+    
+    
+    <td><button class="btn btn-primary" [disabled]="!selectedFiles" (click)="upload(5)">
+      Upload
+    </button></td>
+  </tr>
+  <tr><td>
+    <label class="btn btn-default">Agreement from Builder  </label></td>
+   <td><input type="file" (change)="selectFile($event)" /></td>
+   
+    <td><button class="btn btn-primary" [disabled]="!selectedFiles" (click)="upload(6)">
+      Upload
+    </button></td>
+  </tr>
+  
+    <tr>
+      <td><label class="btn btn-default"> Agreement to sale</label></td>
+      <td><input type="file" (change)="selectFile($event)" /></td>
+    
+  <td><button class="btn btn-primary" [disabled]="!selectedFiles" (click)="upload(7)">
+    Upload
+  </button></td>
+  </tr>
+  
+  </table>
+  </form>
+  
+  <div class="card">
+    <div class="card-header">List of Files</div>
+  </div>

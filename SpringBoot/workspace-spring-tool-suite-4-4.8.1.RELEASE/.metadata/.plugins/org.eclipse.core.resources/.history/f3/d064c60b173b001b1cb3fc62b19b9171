@@ -1,0 +1,9 @@
+package com.lti.spring.HomeLoan;
+
+@Entity
+@Table(name="Loan")
+public class Loan {
+	
+	
+
+}

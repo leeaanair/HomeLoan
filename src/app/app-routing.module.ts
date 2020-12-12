@@ -10,6 +10,10 @@ import { FooterComponent } from './footer/footer.component';
 import{AdminLoginComponent} from './admin-login/admin-login.component';
 import{FaqComponent} from './faq/faq.component';
 import{AboutComponent} from './about/about.component';
+import { ForgotPasswordComponentComponent } from './forgot-password-component/forgot-password-component.component';
+import { UploadFilesComponent } from './upload-files/upload-files.component';
+
+
 
 
 const routes: Routes = [
@@ -18,7 +22,10 @@ const routes: Routes = [
   {path: 'adminlogin', component:AdminLoginComponent},
   {path: 'faq', component:FaqComponent},
   {path: 'adminlogin', component:AdminLoginComponent},
-  {path: 'aboutus', component:AboutComponent}
+  {path: 'aboutus', component:AboutComponent},
+  {path: 'stepper', component:StepperComponentComponent},
+  {path: 'forgot', component: ForgotPasswordComponentComponent},
+  {path: 'submitFiles', component: UploadFilesComponent}
 ];
 
 @NgModule({

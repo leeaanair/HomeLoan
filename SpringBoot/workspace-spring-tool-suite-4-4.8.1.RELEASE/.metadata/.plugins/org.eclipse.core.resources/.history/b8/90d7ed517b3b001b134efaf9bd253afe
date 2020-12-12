@@ -1,0 +1,9 @@
+package com.lti.spring.HomeLoan.dao;
+
+import org.springframework.data.repository.CrudRepository;
+
+import com.lti.spring.HomeLoan.model.EmbeddedDocument;
+
+public class PropertyDao implements CrudRepository<ProperyDetails, EmbeddedDocument> {
+
+}

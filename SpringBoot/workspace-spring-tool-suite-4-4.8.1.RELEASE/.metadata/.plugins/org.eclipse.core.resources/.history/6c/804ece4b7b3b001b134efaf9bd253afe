@@ -1,0 +1,7 @@
+package com.lti.spring.HomeLoan.dao;
+
+import org.springframework.data.repository.CrudRepository;
+
+public class PropertyDao implements CrudRepository<T, ID> {
+
+}

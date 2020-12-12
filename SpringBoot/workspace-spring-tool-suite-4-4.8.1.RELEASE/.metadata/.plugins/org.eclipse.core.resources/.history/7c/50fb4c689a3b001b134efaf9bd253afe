@@ -1,0 +1,109 @@
+package com.lti.spring.HomeLoan.model;
+
+import javax.persistence.Column;
+import javax.persistence.EmbeddedId;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="documentlocation")
+public class DocumentLocation {
+	
+	@EmbeddedId
+	private EmbeddedKey embeddedDocument;
+	
+	@Column(name="pancard")
+	private String panCard;
+	
+	@Column(name="aadhaarcard")
+	private String aadhaarCard;
+	
+	@Column(name="voterid")
+	private String voterId;
+	
+	@Column(name="salaryslip")
+	private String salarySlip;
+	
+	@Column(name="loa")
+	private String LOA;
+	
+	@Column(name="noc")
+	private String NOC;
+	
+	@Column(name="agreement")
+	private String agreement;
+
+	public EmbeddedKey getEmbeddedDocument() {
+		return embeddedDocument;
+	}
+
+	public void setEmbeddedDocument(EmbeddedKey embeddedDocument) {
+		this.embeddedDocument = embeddedDocument;
+	}
+
+	public String getPanCard() {
+		return panCard;
+	}
+
+	public void setPanCard(String panCard) {
+		this.panCard = panCard;
+	}
+
+	public String getAadhaarCard() {
+		return aadhaarCard;
+	}
+
+	public void setAadhaarCard(String aadhaarCard) {
+		this.aadhaarCard = aadhaarCard;
+	}
+
+	public String getVoterId() {
+		return voterId;
+	}
+
+	public void setVoterId(String voterId) {
+		this.voterId = voterId;
+	}
+
+	public String getSalarySlip() {
+		return salarySlip;
+	}
+
+	public void setSalarySlip(String salarySlip) {
+		this.salarySlip = salarySlip;
+	}
+
+	public String getLOA() {
+		return LOA;
+	}
+
+	public void setLOA(String lOA) {
+		LOA = lOA;
+	}
+
+	public String getNOC() {
+		return NOC;
+	}
+
+	public void setNOC(String nOC) {
+		NOC = nOC;
+	}
+
+	public String getAgreement() {
+		return agreement;
+	}
+
+	public void setAgreement(String agreement) {
+		this.agreement = agreement;
+	}
+
+	@Override
+	public String toString() {
+		return "DocumentLocation [embeddedDocument=" + embeddedDocument + ", panCard=" + panCard + ", aadhaarCard="
+				+ aadhaarCard + ", voterId=" + voterId + ", salarySlip=" + salarySlip + ", LOA=" + LOA + ", NOC=" + NOC
+				+ ", agreement=" + agreement + "]";
+	}
+	
+	
+
+}

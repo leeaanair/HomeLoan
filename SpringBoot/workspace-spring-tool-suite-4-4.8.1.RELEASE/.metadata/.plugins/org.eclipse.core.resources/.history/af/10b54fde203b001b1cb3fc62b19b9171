@@ -1,0 +1,12 @@
+package com.lti.spring.HomeLoan.model;
+
+@Embeddable
+public class EmbeddedDocument {
+	
+	@Column(name="emailid")
+	private String emailId;
+	
+	@Column(name="applicationnumber")
+	private String applicationNumber;
+
+}

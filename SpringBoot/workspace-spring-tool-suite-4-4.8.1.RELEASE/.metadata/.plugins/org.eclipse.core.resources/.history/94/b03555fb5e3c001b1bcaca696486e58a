@@ -1,0 +1,18 @@
+package com.lti.spring.HomeLoan;
+
+import javax.annotation.Resource;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class HomeLoanApplication {
+	
+	  @Resource
+	  FileStorageService storageService;
+
+	public static void main(String[] args) {
+		SpringApplication.run(HomeLoanApplication.class, args);
+	}
+
+}

@@ -1,3 +1,5 @@
+//class for storing personal details
+
 export class Customer {
 
 	fname : string;
