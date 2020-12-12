@@ -13,6 +13,11 @@ import {LoanTrackerComponent} from './loan-tracker/loan-tracker.component';
 
 import{FaqComponent} from './faq/faq.component';
 import{AboutComponent} from './about/about.component';
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+import { AdminVerificationComponent } from './admin-verification/admin-verification.component';
+
+
+
 
 
 
@@ -22,11 +27,12 @@ const routes: Routes = [
   {path: 'adminlogin', component:AdminLoginComponent},
 
   {path: 'loantracker', component:LoanTrackerComponent},
-
-
   {path: 'faq', component:FaqComponent},
- 
-  {path: 'aboutus', component:AboutComponent}
+  {path: 'aboutus', component:AboutComponent},
+  {path: 'admindashboard', component: AdminDashboardComponent},
+  {path: 'adminverification', component: AdminVerificationComponent},
+  {path:'stepper',component:StepperComponentComponent}
+
 
 ];
 
