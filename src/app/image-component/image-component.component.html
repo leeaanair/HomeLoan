@@ -1,5 +1,49 @@
 <div *ngIf="router.url === '/'">
-    <img  class="image" src="../../assets/images/home.jpg">	
-    <button class="btn btn-primary button">Apply Now</button>
-    </div>
-    
+    <div class='container-fluid'>  
+        <div class="row" style="padding: 20px;">  
+        </div> 
+        
+        <div class='col-12'>  
+            <ngb-carousel> 
+            <div>
+                    <button class="btn btn-primary button">Apply Now</button>   
+          </div>
+                <ng-template ngbSlide>  
+                    <div>
+                        <button class="btn btn-primary button">Apply Now</button>   
+              </div>
+                    <img src="../assets/images/home.jpg" style="width:100%;height:500px;" alt="Delhi Metro">  
+                    <div class="carousel-caption">  
+                    </div>  
+                </ng-template>  
+                <ng-template ngbSlide> 
+                    <div>
+                        <button class="btn btn-primary button">Apply Now</button>   
+              </div>
+                    <img src="../assets/images/backdrop2.jfif" style="width:100%;height:500px;"alt="Bangalore Metro">  
+                    <div class="carousel-caption">    
+                    </div>  
+                </ng-template>  
+                <ng-template ngbSlide>  
+                    <div>
+                        <button class="btn btn-primary button">Apply Now</button>   
+              </div>
+                    <img src="../assets/images/emi.jpg" style="width:100%;height:500px;" alt="Channai Metro">  
+                    <div class="carousel-caption">   
+                    </div>  
+                </ng-template>  
+                <ng-template ngbSlide>
+                    <div>
+                        <button class="btn btn-primary button">Apply Now</button>   
+              </div>
+                    <img src="../assets/images/backdrop.jfif" style="width:100%;height:500px;"alt="Jaipur Metro">  
+                    <div class="carousel-caption">  
+                    </div>
+                     
+                </ng-template> 
+                
+            </ngb-carousel>  
+            
+        </div>  
+      
+    </div>  
