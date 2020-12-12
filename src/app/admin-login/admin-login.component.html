@@ -1,0 +1,43 @@
+
+<div class="card" style="width:20rem;">
+    <div class="card-header text-white" style="background-color:dodgerblue;">
+       <h2>Login</h2>
+     </div>
+    <div class="card-body" >
+  <div class="container" >
+     <div class="row">
+       
+         <form  [formGroup]="adminloginForm" (ngSubmit)="onadminLogin()">
+          <table>
+          <div class="form-group">
+             <label>Email</label>
+             <div class="inputWithIcon">
+             <input class="input-field" type="text" name="Userid" placeholder="abc@gmail.com" class="form-control form-control-sm" [formControl]="adminemailControl"/>
+             <i class="fa fa-envelope fa-lg fa-fw" aria-hidden="true"></i>
+             <span  *ngIf="adminemailControl.hasError('required') && adminemailControl.dirty" class="text-danger" ><p>Email required!</p></span>
+          </div>
+            </div>
+            
+             <div class="form-group">
+            <label>Password</label>
+            <div class="inputWithIcon">
+             <input type="password" name="password" placeholder="Enter password " class="form-control form-control-sm" [formControl]="adminpasswordControl">
+             <i style="float:left" class="fa fa-lock fa-lg fa-fw" aria-hidden="true"></i>
+             <span *ngIf="adminpasswordControl.hasError('required') && adminpasswordControl.dirty" class="text-danger" >password required! </span>
+          </div>
+            </div>
+            
+             <div class="form-group">
+             <input class="btn btn-outline-primary" type="submit" value="Login">
+             <br>
+             <a href="#">Forgot password?</a>
+            </div>
+          </table>
+         </form>
+        </div>
+       </div>
+    </div>
+   </div> 
+ 
+  
+
