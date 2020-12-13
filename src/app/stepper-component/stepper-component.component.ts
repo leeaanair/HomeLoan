@@ -50,20 +50,22 @@ export class StepperComponentComponent implements OnInit {
       this.secondFormGroup = this._formBuilder.group({
          emptypeControl: ['', Validators.required],
          retireageControl: ['', Validators.required],
+         salaryControl: ['', Validators.required],
          orgnameControl: ['', Validators.required],
 
       });
 
        this.thirdFormGroup = this._formBuilder.group({
          tenureControl: ['', Validators.required],
-         loantamControl: ['', Validators.required]
+         loanamtControl: ['', Validators.required]
       });
       this.fourthFormGroup = this._formBuilder.group({
          nationalityControl: ['', Validators.required],
          anoControl: ['', Validators.required,],
          pnoControl: ['', Validators.required],
          dobControl: ['', Validators.required],
-         
+         phonenoControl: ['', Validators.required,],
+         addressControl: ['', Validators.required,]
 
         // anoControl:['', Validators.required,Validators.max(999999999999),Validators.min(100000000000)],
         //pnoControl:['', Validators.required,Validators.maxLength(10),Validators.minLength(10),Validators.pattern("[a-zA-Z ]*")]

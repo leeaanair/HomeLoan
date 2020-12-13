@@ -22,21 +22,20 @@ import {LoginregComponent} from './loginreg/loginreg.component';
 import {MatTabsModule} from '@angular/material/tabs';
 import { FooterComponent } from './footer/footer.component';
 import {MatRadioModule} from '@angular/material/radio';
-
-
 import { LoanTrackerComponent } from './loan-tracker/loan-tracker.component';
 import { PersonalDetailsComponent } from './personal-details/personal-details.component'
-
 import {AdminLoginComponent} from './admin-login/admin-login.component'
 import { CustomerServiceService } from './services/customer-service.service';
-
-
 import { FaqComponent } from './faq/faq.component';
 import { AboutComponent } from './about/about.component';
-
-
 import { UploadFilesComponent } from './upload-files/upload-files.component';
 import { UploadFileService } from './services/upload-file.service';
+import {NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+import { AdminVerificationComponent } from './admin-verification/admin-verification.component';
+import { HomeDetailsComponent } from './home-details/home-details.component';
+import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
+import { UserAppStatusComponent } from './user-app-status/user-app-status.component';
 
 
 
@@ -60,7 +59,12 @@ import { UploadFileService } from './services/upload-file.service';
     PersonalDetailsComponent,
 
     AboutComponent,
-    UploadFilesComponent
+    UploadFilesComponent,
+    AdminDashboardComponent,
+    AdminVerificationComponent,
+    HomeDetailsComponent,
+    UserDashboardComponent,
+    UserAppStatusComponent
     
 
       ],
@@ -76,7 +80,8 @@ import { UploadFileService } from './services/upload-file.service';
     FormsModule,
     NgxSliderModule,
     MatSelectModule,
-    MatTabsModule
+    MatTabsModule,
+    NgbModule
           ],
   providers: [CustomerServiceService,UploadFileService],
   bootstrap: [AppComponent]

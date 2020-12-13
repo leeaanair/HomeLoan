@@ -1,0 +1,51 @@
+<div *ngIf="router.url === '/'" class="img-container">
+    <div class="container-fluid img-container text-center">
+
+
+        <img class="float-left" src="../assets/images/calculator.jpg" style="width:25%;height:50%;" alt="Calculator">
+
+        <div class="jumbotron">
+            <h1 class="display-4">Want a Loan ?</h1>
+            <p class="lead">Click Here to get more information about maximum loan amount applicable and EMI installments.</p>
+           
+           
+            <p class="lead">
+              <a class="btn btn-primary btn-lg" href="/calculator" role="button">Go to Calculator</a>
+            </p>
+          </div>
+    </div>
+
+
+    <div class="container-fluid">
+        <button type="button" class="btn btn-primary btn-lg btn-block doc-button" data-toggle="modal" data-target="#exampleModalLong">Click Here To know the list of documents required</button>
+    </div>
+
+    <!-- Modal -->
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title" id="exampleModalLongTitle">Required Documents</h1>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <h3>PAN card</h3>
+          <h3>Voter ID</h3>
+          <h3>Salary Slip</h3>
+          <h3>LOA</h3>
+          <h3>NOC</h3>
+          <h3>NOC from builder</h3>
+          <h3>Aggrement from builder</h3>
+          <h3>Aggrement to sale</h3>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

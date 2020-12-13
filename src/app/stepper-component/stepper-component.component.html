@@ -12,6 +12,25 @@
      </div>
 
      <div>
+      <mat-form-field>
+          <mat-label>Address</mat-label>
+          <input matInput type="textarea" placeholder = "Enter Address" formControlName = "addressControl" required >
+          <!-- <textarea matInput  placeholder = "Enter Address" formControlName = "addressControl" required > -->
+          
+
+     </mat-form-field>
+   </div>
+
+     <div>
+      <mat-form-field>
+          <mat-label>Phone No.</mat-label>
+          <input matInput type="number" placeholder = "Enter Phone No." formControlName = "phonenoControl" required >
+          
+
+     </mat-form-field>
+   </div>
+
+     <div>
         <mat-form-field>
             <mat-label>Aadhar No.</mat-label>
             <input matInput type="number" placeholder = "Enter Aadhar No." formControlName = "anoControl" required >
@@ -41,7 +60,6 @@
       <mat-radio-button value="always">Always</mat-radio-button>
     </mat-radio-group>
   </div> -->
-    <!-- <app-personal-details></app-personal-details> -->
 
        <div>
          <button mat-button matStepperNext>Next</button>
@@ -99,6 +117,14 @@
               </mat-select>
             </mat-form-field>
           </div>
+          
+          <div>
+            <mat-form-field>
+                <mat-label>Monthly Salary</mat-label>
+                <input matInput type="number" formControlName = "salaryControl" required>
+           </mat-form-field>
+         </div>
+
 
         <div>
           <mat-form-field>
