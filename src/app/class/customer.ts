@@ -8,13 +8,13 @@ export class Customer {
 	emailId : string;
 	address : string;
 	password : string;
-	dateofbirth : string;
-	phonenumber : string;
+	dateOfBirth : string;
+	phoneNumber : string;
 	gender : string;
 	pancard : string;
 	aadhaar : string;
 	nationality : string;
-	accountno : string;
+	accountNumber : string;
 	balance : number;
 
 }

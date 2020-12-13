@@ -1,0 +1,63 @@
+package com.lti.spring.HomeLoan.model;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
+
+public class Application {
+	
+	@JsonProperty("customer")
+	private Customer customer;
+	
+	@JsonProperty("employmentDetails")
+	private EmploymentDetails employmentdetails;
+	
+	@JsonProperty("propertyDetails")
+	private PropertyDetails propertydetails;
+	
+	@JsonProperty("loan")
+	private Loan loan;
+	
+	@JsonProperty("embeddedKey")
+	private EmbeddedKey embeddedDocument;
+	
+	public Customer getCustomer() {
+		return customer;
+	}
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
+	}
+	public EmploymentDetails getEmploymentdetails() {
+		return employmentdetails;
+	}
+	public void setEmploymentdetails(EmploymentDetails employmentdetails) {
+		this.employmentdetails = employmentdetails;
+	}
+	public PropertyDetails getPropertydetails() {
+		return propertydetails;
+	}
+	public void setPropertydetails(PropertyDetails propertydetails) {
+		this.propertydetails = propertydetails;
+	}
+	public Loan getLoan() {
+		return loan;
+	}
+	public void setLoan(Loan loan) {
+		this.loan = loan;
+		
+	}
+	
+	public EmbeddedKey getEmbeddedDocument() {
+		return embeddedDocument;
+	}
+	public void setEmbeddedDocument(EmbeddedKey embeddedDocument) {
+		this.embeddedDocument = embeddedDocument;
+	}
+	@Override
+	public String toString() {
+		return "Application [customer=" + customer + ", employmentdetails=" + employmentdetails + ", propertydetails="
+				+ propertydetails + ", loan=" + loan + ", embeddedDocument=" + embeddedDocument + "]";
+	}
+	
+	
+}

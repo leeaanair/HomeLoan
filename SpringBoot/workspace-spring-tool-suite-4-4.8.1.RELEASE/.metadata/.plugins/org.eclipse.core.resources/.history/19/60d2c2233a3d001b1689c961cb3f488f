@@ -1,0 +1,7 @@
+package com.lti.spring.HomeLoan.dao;
+
+import org.springframework.data.repository.CrudRepository;
+
+public interface CustomerDetailDao extends CrudRepository<T, ID> {
+
+}

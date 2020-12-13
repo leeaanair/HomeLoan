@@ -21,32 +21,7 @@ emailId CONSTRAINT emailId REFERENCES customer(emailId),
 loanAmount number(20,2) not null,
 tenure number(20, 2) not null,
 calculatedEmi number(20,2) not null,
-applicationStatus number(1,0) not null
-);
-
-create table document (
-emailId CONSTRAINT emailIdforVerification REFERENCES customer(emailId),
-applicationNumber constraint applicationId references loan(applicationNumber),
-panCard number(1,0) not null,
-aadharCard number(1,0) not null,
-voterId number(1,0) not null,
-salarySlip number(1,0) not null,
-LOA number(1,0) not null,
-NOC number(1,0) not null,
-agreement number(1,0) not null,
-eligible number(1,0) not null
-);
-
-create table documentLocation (
-emailId CONSTRAINT emailIdforLocation REFERENCES customer(emailId),
-applicationNumber constraint applicationIddoc references loan(applicationNumber),
-panCard varchar2(255) not null,
-aadharCard varchar2(255) not null,
-voterId varchar2(255) not null,
-salarySlip varchar2(255) not null,
-LOA varchar2(255) not null,
-NOC varchar2(255) not null,
-agreement varchar2(255) not null
+applicationStatus varchar2(20) not null
 );
 
 

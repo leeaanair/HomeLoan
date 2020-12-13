@@ -13,7 +13,11 @@ export class UploadFilesComponent {
 
   selectedFiles: FileList;
 
+  filesArrayClean : File[];
+
   constructor(public filesArrayService: FilesArrayService) { 
+
+    this.filesArrayClean = [];
   }
 
   //on change
@@ -26,6 +30,10 @@ export class UploadFilesComponent {
 
     //adding that file in the array
     this.filesArrayService.files[num] = this.selectedFiles.item(0);
+
+    this.filesArrayClean = this.filesArrayService.files.filter(i => i!== null);
+
+    console.log(this.selectedFiles.item(0).name);
 
     this.selectedFiles = undefined;
   }

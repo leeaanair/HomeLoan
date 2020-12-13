@@ -35,6 +35,7 @@ import { UploadFilesComponent } from './upload-files/upload-files.component';
 import { CustomerServiceService } from './services/customer-service.service';
 import { SessionService } from './services/session.service';
 import { FilesArrayService } from './services/files-array.service';
+import { ShowFileComponent } from './show-file/show-file.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import { FilesArrayService } from './services/files-array.service';
     AdminLoginComponent,
     AboutComponent,
     ForgotPasswordComponentComponent,
-	UploadFilesComponent
+	UploadFilesComponent,
+	ShowFileComponent
       ],
   imports: [
     BrowserModule,

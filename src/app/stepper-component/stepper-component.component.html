@@ -1,5 +1,6 @@
 <div> 
-<mat-horizontal-stepper [linear] = "true" #stepper>
+<mat-horizontal-stepper #stepper>
+<!--   [linear] = "true" --> 
   <mat-step [stepControl] = "fourthFormGroup">
     <form [formGroup] = "fourthFormGroup">
        <ng-template matStepLabel>Enter Personal Details</ng-template>
@@ -11,10 +12,17 @@
        </mat-form-field>
      </div>
 
+      <div>
+       <mat-form-field>
+            <mat-label>Address</mat-label>
+            <textarea matInput placeholder = "Enter Address" formControlName = "addressControl" required></textarea>
+       </mat-form-field>
+     </div>
+
      <div>
         <mat-form-field>
-            <mat-label>Aadhar No.</mat-label>
-            <input matInput type="number" placeholder = "Enter Aadhar No." formControlName = "anoControl" required >
+            <mat-label>Aadhaar No.</mat-label>
+            <input matInput placeholder = "Enter Aadhaar No." formControlName = "anoControl" required >
        </mat-form-field>
      </div>
 
@@ -35,7 +43,16 @@
    </div>
 
 
+      <div>
+        <mat-form-field>
+            <mat-label>Phone</mat-label>
+            <input matInput placeholder = "Enter Phone Number" formControlName = "phoneControl" required>
+       </mat-form-field>
+     </div>
+
+
     <div>
+      <mat-label>Gender</mat-label>
       <mat-radio-group aria-label="Gender" formControlName= "genderControl" required>
         <mat-radio-button value="M">Male</mat-radio-button>
         <mat-radio-button value="F">Female</mat-radio-button>
@@ -57,7 +74,7 @@
          <div>
          <mat-form-field>
               <mat-label>Property Location</mat-label>
-              <input matInput placeholder = "Enter property Location" formControlName = "plocationControl" required>
+              <textarea matInput placeholder = "Enter property Location" formControlName = "plocationControl" required></textarea>
          </mat-form-field>
        </div>
 
@@ -71,7 +88,7 @@
         <div>
           <mat-form-field>
               <mat-label>Estimated Amount</mat-label>
-              <input matInput type="number" placeholder = "Enter Estimated Amount" formControlName = "amountControl" required>
+              <input matInput type="number" placeholder = "Enter Estimated Amount" formControlName = "amountControl" required min="0">
          </mat-form-field>
        </div>
 
@@ -102,7 +119,7 @@
         <div>
           <mat-form-field>
               <mat-label>Retirement age</mat-label>
-              <input matInput type="number" formControlName = "retireageControl" required>
+              <input matInput type="number" formControlName = "retireageControl" required min="30" max="100">
          </mat-form-field>
        </div>
 
@@ -137,15 +154,15 @@
 
         <div>
           <mat-form-field>
-              <mat-label>Tenure</mat-label>
-              <input matInput type="number" formControlName = "tenureControl" required>
+              <mat-label>Tenure in years</mat-label>
+              <input matInput type="number" formControlName = "tenureControl" required min="0" max="100">
          </mat-form-field>
        </div>
 
         <div>
           <mat-form-field>
               <mat-label>Loan Amount</mat-label>
-              <input matInput type="number" formControlName = "loanamtControl" required>
+              <input matInput type="number" formControlName = "loanamtControl" required min="0">
          </mat-form-field>
        </div>
 
@@ -178,4 +195,5 @@
       </div>
    </mat-step>
 </mat-horizontal-stepper>
+
 </div>

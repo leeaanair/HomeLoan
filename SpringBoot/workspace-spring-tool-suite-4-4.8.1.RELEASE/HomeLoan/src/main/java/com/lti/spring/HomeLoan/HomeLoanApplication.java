@@ -20,7 +20,7 @@ public class HomeLoanApplication implements CommandLineRunner{
 	
 	  @Override
 	  public void run(String... arg) throws Exception {
-	    storageService.deleteAll();
+//	    storageService.deleteAll();
 	    storageService.init();
 	  }
 

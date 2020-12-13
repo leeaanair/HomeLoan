@@ -1,0 +1,23 @@
+package com.lti.spring.HomeLoan.dao;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.stereotype.Repository;
+
+import com.lti.spring.HomeLoan.model.CustomerDetails;
+
+@Repository
+public interface CustomerDetailDao{
+	
+	@Query("select distinct customer.emailid, customer.fname, customer.mname, customer.lname, customer.address, "
+			+ "customer.dateofbirth, customer.phonenumber, customer.gender, customer.pancard, customer.aadhaar, "
+			+ "customer.nationality, loan.loanamount, loan.tenure, employmentdetails.employmenttype, "
+			+ "employmentdetails.employername, employmentdetails.retirementage, employmentdetails.monthlysalary, "
+			+ "propertydetails.propertylocation, propertydetails.propertyname, propertydetails.estimatedamount "
+			+ "from customer, loan, employmentdetails, propertydetails where loan.applicationnumber = ?1 and "
+			+ "customer.emailid in (select emailid from loan where applicationnumber = ?1)")
+	List <CustomerDetails> findCustomerByApplicationId(String applicationNumber);
+	
+
+}

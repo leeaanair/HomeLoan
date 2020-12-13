@@ -22,7 +22,7 @@ public class Loan {
 	private String emailId;
 	
 	@Column(name = "loanamount")
-	@JsonProperty("loanamount")
+	@JsonProperty("loanAmount")
 	private int loanAmount;
 	
 	@Column(name = "tenure")
@@ -32,7 +32,7 @@ public class Loan {
 	private double calculatedEmi;
 	
 	@Column(name = "applicationstatus")
-	private int applicationStatus;
+	private String applicationStatus;
 
 	public String getApplicationNumber() {
 		return applicationNumber;
@@ -74,11 +74,11 @@ public class Loan {
 		this.calculatedEmi = calculatedEmi;
 	}
 
-	public int getApplicationStatus() {
+	public String getApplicationStatus() {
 		return applicationStatus;
 	}
 
-	public void setApplicationStatus(int applicationStatus) {
+	public void setApplicationStatus(String applicationStatus) {
 		this.applicationStatus = applicationStatus;
 	}
 

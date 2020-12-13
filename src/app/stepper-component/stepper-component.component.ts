@@ -100,6 +100,8 @@ export class StepperComponentComponent implements OnInit {
          pnoControl: ['', Validators.required],
          dobControl: ['', Validators.required],
          genderControl: ['', Validators.required],
+         addressControl: ['', Validators.required],
+         phoneControl: ['', Validators.required],
 
       });
 
@@ -109,18 +111,24 @@ export class StepperComponentComponent implements OnInit {
 
       //adding data in customer object
       console.log(this.sessionService.get("UserId"));
+      
       this.customer.nationality = this.fourthFormGroup.value.nationalityControl;
       this.customer.aadhaar = this.fourthFormGroup.value.anoControl;
       this.customer.pancard = this.fourthFormGroup.value.pnoControl;
-      this.customer.dateofbirth = this.fourthFormGroup.value.dobControl;
+      this.customer.dateOfBirth = this.fourthFormGroup.value.dobControl;
       this.customer.gender = this.fourthFormGroup.value.genderControl;
+      this.customer.phoneNumber = this.fourthFormGroup.value.phoneControl;
+      this.customer.address = this.fourthFormGroup.value.addressControl;
 
+      console.log(this.customer.dateOfBirth);
+      console.log(this.customer.phoneNumber);
 
       //adding data in loan object
       this.loan.loanAmount = this.thirdFormGroup.value.loanamtControl;
       this.loan.tenure = this.thirdFormGroup.value.tenureControl;
 
 
+      console.log(this.loan.loanAmount);
 
       //addin dta in employment objects
       this.employmentDetails.employmentType = this.secondFormGroup.value.emptypeControl;
@@ -169,6 +177,8 @@ export class StepperComponentComponent implements OnInit {
         console.log(result);
 
         alert("Your application id is "+result+". Please note it for future use");
+
+
     }
 
 

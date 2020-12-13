@@ -1,0 +1,29 @@
+package com.lti.spring.HomeLoan.dao;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
+
+import com.lti.spring.HomeLoan.model.Customer;
+import com.lti.spring.HomeLoan.model.CustomerDetails;
+
+@Repository
+public interface CustomerDao extends CrudRepository<Customer, String> {
+	
+	@Query("from Customer where emailid = ?1 and password=?2")
+	List<Customer> findCustomerByEmailAndPassword(String email, String password);
+	
+	@Query(value = "select distinct customer.emailid, customer.fname, customer.mname, customer.lname, customer.address, "
+			+ "customer.dateofbirth, customer.phonenumber, customer.gender, customer.pancard, customer.aadhaar, "
+			+ "customer.nationality, loan.loanamount, loan.tenure, employmentdetails.employmenttype, "
+			+ "employmentdetails.employername, employmentdetails.retirementage, employmentdetails.monthlysalary, "
+			+ "propertydetails.propertylocation, propertydetails.propertyname, propertydetails.estimatedamount "
+			+ "from customer, loan, employmentdetails, propertydetails where loan.applicationnumber = :id and "
+			+ "customer.emailid in (select emailid from loan where applicationnumber = :id)", 
+			  nativeQuery = true)
+			List<CustomerDetails> findCustomerDetails(@Param("id") String id);
+
+}

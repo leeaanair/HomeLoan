@@ -1,0 +1,11 @@
+package com.lti.spring.HomeLoan.dao;
+
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface ApplicationDao extends CrudRepository<Application, String>{
+
+}
+
+

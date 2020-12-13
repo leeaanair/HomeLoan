@@ -13,5 +13,8 @@ public interface CustomerDao extends CrudRepository<Customer, String> {
 	
 	@Query("from Customer where emailid = ?1 and password=?2")
 	List<Customer> findCustomerByEmailAndPassword(String email, String password);
+	
+	@Query("from Customer c where c.emailId in (select l.emailId from Loan l where l.applicationNumber=?1)")
+	List<Customer> findByApplicationId(String id);
 
 }
