@@ -1,0 +1,8 @@
+package com.lti.spring.HomeLoan.model;
+
+@Embeddable
+public class EmbeddedDocument {
+	
+	
+
+}

@@ -1,0 +1,18 @@
+package com.lti.spring.HomeLoan.dao;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
+
+import com.lti.spring.HomeLoan.model.CustomerDetails;
+
+@Repository
+public interface CustomerDetailDao extends CrudRepository<CustomerDetails, String>{
+	
+	@Query()
+	List <CustomerDetails> findCustomerByApplicationId(String applicationNumber);
+	
+
+}

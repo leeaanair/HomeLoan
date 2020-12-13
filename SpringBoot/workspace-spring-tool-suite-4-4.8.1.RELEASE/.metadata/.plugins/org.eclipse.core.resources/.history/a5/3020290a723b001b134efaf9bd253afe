@@ -1,0 +1,42 @@
+package com.lti.spring.HomeLoan.model;
+
+public class Application {
+	
+	@JsonProperty(name="customer")
+	private Customer customer;
+	
+	@JsonProperty(name="employmentDetails")
+	private EmploymentDetails employmentdetails;
+	
+	@JsonProperty(name="propertyDetails")
+	private PropertyDetails propertydetails;
+	
+	@JsonProperty(name="loan")
+	private Loan loan;
+	
+	
+	public Customer getCustomer() {
+		return customer;
+	}
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
+	}
+	public EmploymentDetails getEmploymentdetails() {
+		return employmentdetails;
+	}
+	public void setEmploymentdetails(EmploymentDetails employmentdetails) {
+		this.employmentdetails = employmentdetails;
+	}
+	public PropertyDetails getPropertydetails() {
+		return propertydetails;
+	}
+	public void setPropertydetails(PropertyDetails propertydetails) {
+		this.propertydetails = propertydetails;
+	}
+	public Loan getLoan() {
+		return loan;
+	}
+	public void setLoan(Loan loan) {
+		this.loan = loan;
+	}
+}

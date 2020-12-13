@@ -1,0 +1,28 @@
+package com.lti.spring.HomeLoan.model;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="document")
+public class DocumentVerified {
+	
+	
+	private String panCard;
+	
+	private String aadharCard;
+	
+	private String voterId;
+	
+	private String salarySlip;
+	
+	private String LOA;
+	
+	private String NOC;
+	
+	private String agreement;
+	
+	private String eligible;
+
+}

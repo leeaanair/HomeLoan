@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { UploadFileService } from 'src/app/services/upload-file.service';
+import { FilesArrayService } from '../services/files-array.service';
+
 import { HttpEventType, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
@@ -8,43 +9,31 @@ import { Observable } from 'rxjs';
   templateUrl: './upload-files.component.html',
   styleUrls: ['./upload-files.component.css']
 })
-export class UploadFilesComponent implements OnInit {
+export class UploadFilesComponent {
 
   selectedFiles: FileList;
-  currentFile: File;
-  progress = 0;
-  message = '';
 
-  fileInfos: Observable<any>;
+  filesArrayClean : File[];
 
-  constructor(private uploadService: UploadFileService) { }
+  constructor(public filesArrayService: FilesArrayService) { 
 
-  ngOnInit() {
-    this.fileInfos = this.uploadService.getFiles();
+    this.filesArrayClean = [];
   }
 
+  //on change
   selectFile(event) {
     this.selectedFiles = event.target.files;
   }
 
-  upload() {
-    this.progress = 100;
+  //on clicking upload
+  upload(num) {
 
-    this.currentFile = this.selectedFiles.item(0);
-    this.uploadService.upload(this.currentFile).subscribe(
-      event => {
-        if (event.type === HttpEventType.UploadProgress) {
-          this.progress = Math.round(100 * event.loaded / event.total);
-        } else if (event instanceof HttpResponse) {
-          this.message = event.body.message;
-          this.fileInfos = this.uploadService.getFiles();
-        }
-      },
-      err => {
-        this.progress = 0;
-        this.message = 'Could not upload the file!';
-        this.currentFile = undefined;
-      });
+    //adding that file in the array
+    this.filesArrayService.files[num] = this.selectedFiles.item(0);
+
+    this.filesArrayClean = this.filesArrayService.files.filter(i => i!== null);
+
+    console.log(this.selectedFiles.item(0).name);
 
     this.selectedFiles = undefined;
   }

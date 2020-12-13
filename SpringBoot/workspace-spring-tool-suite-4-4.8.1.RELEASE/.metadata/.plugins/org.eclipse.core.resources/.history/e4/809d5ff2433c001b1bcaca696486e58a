@@ -1,0 +1,29 @@
+package com.lti.spring.HomeLoan.model;
+
+import org.springframework.web.multipart.MultipartFile;
+
+public class FilesnData {
+	
+	private Application application;
+	
+	private MultipartFile[] files;
+
+	public Application getApplication() {
+		return application;
+	}
+
+	public void setApplication(Application application) {
+		this.application = application;
+	}
+
+	public MultipartFile[] getFiles() {
+		return files;
+	}
+
+	public void setFiles(MultipartFile[] files) {
+		this.files = files;
+	}
+	
+	
+	
+}

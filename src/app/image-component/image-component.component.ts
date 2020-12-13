@@ -2,6 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 
+
+import { SessionService } from '../services/session.service';
+
+
 @Component({
   selector: 'app-image-component',
   templateUrl: './image-component.component.html',
@@ -9,7 +13,8 @@ import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 })
 export class ImageComponentComponent implements OnInit {
 
-  constructor(public router: Router, config: NgbCarouselConfig) {
+  
+  constructor(public router: Router, config: NgbCarouselConfig, public sessionService : SessionService) {
     config.interval = 2000;  
     config.wrap = true;  
     config.keyboard = false;  
@@ -18,8 +23,21 @@ export class ImageComponentComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  stepper(){
 
-    this.router.navigate(['/stepper']);
+  apply(){
+
+      if(this.sessionService.get("UserId") != null){
+        
+          this.router.navigate(['/stepper']);
+
+      }
+
+      else{
+
+          this.router.navigate(['/login']);
+
+      }
+
   }
-}
+
+  }

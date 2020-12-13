@@ -1,0 +1,33 @@
+package com.lti.spring.HomeLoan;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="loan")
+public class Loan {
+	
+	@Id
+	@Column(name = "applicationnumber")
+	private String applicationNumber;
+
+	@Column(name = "emailid")
+	private String emailId;
+	
+	@Column(name = "loanamount")
+	private String loanAmount;
+	
+	@Column(name = "tenure")
+	private int tenure;
+	
+	@Column(name = "calculatedemi")
+	private double calculatedEmi;
+	
+	@Column(name = "applicationstatus")
+	private int applicationStatus;
+	
+	
+
+}

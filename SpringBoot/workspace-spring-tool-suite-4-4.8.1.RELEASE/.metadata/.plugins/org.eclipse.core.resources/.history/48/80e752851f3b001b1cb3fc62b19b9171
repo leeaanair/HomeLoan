@@ -1,0 +1,26 @@
+package com.lti.spring.HomeLoan.model;
+
+@Entity
+@Table(name="document")
+public class DocumentVerified {
+	
+	
+	private String emailId;
+	
+	private String panCard;
+	
+	private String aadharCard;
+	
+	private String voterId;
+	
+	private String salarySlip;
+	
+	private String LOA;
+	
+	private String NOC;
+	
+	private String agreement;
+	
+	private String eligible;
+
+}

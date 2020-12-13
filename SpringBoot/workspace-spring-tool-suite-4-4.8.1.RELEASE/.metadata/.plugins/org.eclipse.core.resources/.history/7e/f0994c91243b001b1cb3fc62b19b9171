@@ -1,0 +1,21 @@
+package com.lti.spring.HomeLoan.model;
+
+import javax.persistence.EmbeddedId;
+
+@Entity
+@Table(name="propertydetails")
+public class PropertyDetails {
+
+	@EmbeddedId
+	private EmbeddedDocument embeddedDocument;
+	
+	private String propertyLocation;
+	
+	private String propertName;
+	
+	private String estimatedAmount;
+	
+
+	
+
+}

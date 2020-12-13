@@ -1,0 +1,25 @@
+package com.lti.spring.HomeLoan.model;
+
+import javax.persistence.EmbeddedId;
+
+@Entity
+@Table(name="employmentdetails")
+public class EmploymentDetails {
+
+	@EmbeddedId
+	private EmbeddedDocument embeddedDocument;
+	
+	@Column(name="employmenttype")
+	private String employmentType;
+	
+	@Column(name="employername")
+	private String employerName;
+	
+	@Column(name="retirementage")
+	private int retirementAge;
+	
+	@Column(name="monthlysalary")
+	private double monthlySalary;
+	
+
+}

@@ -1,0 +1,162 @@
+package com.lti.spring.HomeLoan.model;
+
+import java.util.Date;
+
+
+public class CustomerDetails {
+	
+	private String emailId;
+	private String fname;
+	private String mname;
+	private String lname;
+	private String address;
+	private Date dateOfBirth;
+	private String phoneNumber;
+	private String gender;
+	private String pancard;
+	private String aadhaar;
+	private String nationality;
+	private int loanAmount;
+	private int tenure;
+	private String employmentType;
+	private String employerName;
+	private int retirementAge;
+	private double monthlySalary;
+	private String propertyLocation;
+	private String propertyName;
+	private int estimatedAmount;
+	public String getEmailId() {
+		return emailId;
+	}
+	public void setEmailId(String emailId) {
+		this.emailId = emailId;
+	}
+	public String getFname() {
+		return fname;
+	}
+	public void setFname(String fname) {
+		this.fname = fname;
+	}
+	public String getMname() {
+		return mname;
+	}
+	public void setMname(String mname) {
+		this.mname = mname;
+	}
+	public String getLname() {
+		return lname;
+	}
+	public void setLname(String lname) {
+		this.lname = lname;
+	}
+	public String getAddress() {
+		return address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
+	}
+	public Date getDateOfBirth() {
+		return dateOfBirth;
+	}
+	public void setDateOfBirth(Date dateOfBirth) {
+		this.dateOfBirth = dateOfBirth;
+	}
+	public String getPhoneNumber() {
+		return phoneNumber;
+	}
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}
+	public String getGender() {
+		return gender;
+	}
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+	public String getPancard() {
+		return pancard;
+	}
+	public void setPancard(String pancard) {
+		this.pancard = pancard;
+	}
+	public String getAadhaar() {
+		return aadhaar;
+	}
+	public void setAadhaar(String aadhaar) {
+		this.aadhaar = aadhaar;
+	}
+	public String getNationality() {
+		return nationality;
+	}
+	public void setNationality(String nationality) {
+		this.nationality = nationality;
+	}
+	public int getLoanAmount() {
+		return loanAmount;
+	}
+	public void setLoanAmount(int loanAmount) {
+		this.loanAmount = loanAmount;
+	}
+	public int getTenure() {
+		return tenure;
+	}
+	public void setTenure(int tenure) {
+		this.tenure = tenure;
+	}
+	public String getEmploymentType() {
+		return employmentType;
+	}
+	public void setEmploymentType(String employmentType) {
+		this.employmentType = employmentType;
+	}
+	public String getEmployerName() {
+		return employerName;
+	}
+	public void setEmployerName(String employerName) {
+		this.employerName = employerName;
+	}
+	public int getRetirementAge() {
+		return retirementAge;
+	}
+	public void setRetirementAge(int retirementAge) {
+		this.retirementAge = retirementAge;
+	}
+	public double getMonthlySalary() {
+		return monthlySalary;
+	}
+	public void setMonthlySalary(double monthlySalary) {
+		this.monthlySalary = monthlySalary;
+	}
+	public String getPropertyLocation() {
+		return propertyLocation;
+	}
+	public void setPropertyLocation(String propertyLocation) {
+		this.propertyLocation = propertyLocation;
+	}
+	public String getPropertyName() {
+		return propertyName;
+	}
+	public void setPropertyName(String propertyName) {
+		this.propertyName = propertyName;
+	}
+	public int getEstimatedAmount() {
+		return estimatedAmount;
+	}
+	public void setEstimatedAmount(int estimatedAmount) {
+		this.estimatedAmount = estimatedAmount;
+	}
+	
+	@Override
+	public String toString() {
+		return "CustomerDetails [emailId=" + emailId + ", fname=" + fname + ", mname=" + mname + ", lname=" + lname
+				+ ", address=" + address + ", dateOfBirth=" + dateOfBirth + ", phoneNumber=" + phoneNumber + ", gender="
+				+ gender + ", pancard=" + pancard + ", aadhaar=" + aadhaar + ", nationality=" + nationality
+				+ ", loanAmount=" + loanAmount + ", tenure=" + tenure + ", employmentType=" + employmentType
+				+ ", employerName=" + employerName + ", retirementAge=" + retirementAge + ", monthlySalary="
+				+ monthlySalary + ", propertyLocation=" + propertyLocation + ", propertyName=" + propertyName
+				+ ", estimatedAmount=" + estimatedAmount + "]";
+	}
+	
+	
+	
+}

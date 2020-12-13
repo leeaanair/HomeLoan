@@ -6,12 +6,15 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import com.lti.spring.HomeLoan.Customer;
+import com.lti.spring.HomeLoan.model.Customer;
 
 @Repository
 public interface CustomerDao extends CrudRepository<Customer, String> {
 	
 	@Query("from Customer where emailid = ?1 and password=?2")
 	List<Customer> findCustomerByEmailAndPassword(String email, String password);
+	
+	@Query("from Customer c where c.emailId in (select l.emailId from Loan l where l.applicationNumber=?1)")
+	List<Customer> findByApplicationId(String id);
 
 }
