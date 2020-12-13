@@ -36,8 +36,8 @@ public class HomeController {
     	    	
     	Optional<Customer> customer1 = customerDao.findById(customer.getEmailId()); 
 
+
     	if(customer1.isPresent()) {
-    		
     		
     	    MessageDigest md = MessageDigest.getInstance("MD5");
     	    md.update(customer.getPassword().getBytes());

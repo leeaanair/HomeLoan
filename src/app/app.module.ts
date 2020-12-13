@@ -21,11 +21,13 @@ import {LoginComponent} from './login/login.component';
 import {LoginregComponent} from './loginreg/loginreg.component';
 import {MatTabsModule} from '@angular/material/tabs';
 import { FooterComponent } from './footer/footer.component';
+
 import {MatRadioModule} from '@angular/material/radio';
 import { LoanTrackerComponent } from './loan-tracker/loan-tracker.component';
 import { PersonalDetailsComponent } from './personal-details/personal-details.component'
 import {AdminLoginComponent} from './admin-login/admin-login.component'
 import { CustomerServiceService } from './services/customer-service.service';
+
 import { FaqComponent } from './faq/faq.component';
 import { AboutComponent } from './about/about.component';
 import { UploadFilesComponent } from './upload-files/upload-files.component';
@@ -36,6 +38,8 @@ import { AdminVerificationComponent } from './admin-verification/admin-verificat
 import {HomeDetailsComponent} from './home-details/home-details.component';
 import {UserDashboardComponent} from './user-dashboard/user-dashboard.component';
 import { UserAppStatusComponent } from './user-app-status/user-app-status.component';
+
+
 
 
 
@@ -57,6 +61,7 @@ import { UserAppStatusComponent } from './user-app-status/user-app-status.compon
 
     LoanTrackerComponent,
     PersonalDetailsComponent,
+
 
     AboutComponent,
     UploadFilesComponent,
@@ -85,7 +90,9 @@ import { UserAppStatusComponent } from './user-app-status/user-app-status.compon
     MatTabsModule,
     NgbModule
           ],
+
   providers: [CustomerServiceService,UploadFileService],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }

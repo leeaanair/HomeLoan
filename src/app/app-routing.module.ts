@@ -19,16 +19,20 @@ import { AdminVerificationComponent } from './admin-verification/admin-verificat
 
 
 
+
+
 const routes: Routes = [
   {path: 'calculator', component: ElgCalComponent},
   {path: 'login', component:LoginregComponent},
   {path: 'adminlogin', component:AdminLoginComponent},
+
   {path: 'loantracker', component:LoanTrackerComponent},
   {path: 'faq', component:FaqComponent},
   {path: 'aboutus', component:AboutComponent},
   {path: 'admindashboard', component: AdminDashboardComponent},
   {path: 'adminverification', component: AdminVerificationComponent},
   {path:'stepper',component:StepperComponentComponent}
+
 
 ];
 
