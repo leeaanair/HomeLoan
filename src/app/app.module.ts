@@ -35,6 +35,9 @@ import { UploadFileService } from './services/upload-file.service';
 import {NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { AdminVerificationComponent } from './admin-verification/admin-verification.component';
+import {HomeDetailsComponent} from './home-details/home-details.component';
+import {UserDashboardComponent} from './user-dashboard/user-dashboard.component';
+import { UserAppStatusComponent } from './user-app-status/user-app-status.component';
 
 
 
@@ -63,7 +66,12 @@ import { AdminVerificationComponent } from './admin-verification/admin-verificat
     AboutComponent,
     UploadFilesComponent,
     AdminDashboardComponent,
-    AdminVerificationComponent
+    AdminVerificationComponent,
+
+    HomeDetailsComponent,
+    UserDashboardComponent,
+    UserAppStatusComponent
+    
     
 
       ],

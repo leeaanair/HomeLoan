@@ -1,0 +1,6 @@
+.card{
+    margin:auto;
+}
+input[readonly] {
+    background-color: white;
+  }

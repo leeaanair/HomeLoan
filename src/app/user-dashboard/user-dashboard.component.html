@@ -1,0 +1,25 @@
+
+<div *ngIf="router.url === '/'">
+    <!-- currently this is displaying on home page hence the url / -->
+    <!-- This component should be loaded after user is logged in. -->
+        <div class="card ">
+          <h1 class="card-header">Check your Apllication Status</h1>
+          <div class="card-body">
+          
+            <p class="card-text">Manage your account.Track the current  status of your all loan applications.</p>
+            <a href="#" class="btn btn-primary">Check Status</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <h1 class="card-header">Apply for loan</h1>
+          <div class="card-body">
+            
+            <p class="card-text">Create a loan application within few steps.Keep the metioned documents handy for filling application form.</p>
+            <a href="/stepper" class="btn btn-primary">Apply Now</a>
+          </div>
+        </div>
+</div>
+
+
+
