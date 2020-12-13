@@ -1,0 +1,16 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #E6F4F1;
+  }.container{    
+    
+    box-sizing: content-box;  
+    padding: 50px;  
+    border: 5px solid #00A093;
+    float: center;
+    background-color: #E6F4F1;
+
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+
+}

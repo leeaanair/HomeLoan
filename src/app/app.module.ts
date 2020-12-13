@@ -12,6 +12,8 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import {MatRadioModule} from '@angular/material/radio'; 
+import {NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 
 import { AppRoutingModule, routingComponent} from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -24,13 +26,28 @@ import {RegisterComponent} from './register/register.component';
 import {LoginComponent} from './login/login.component';
 import {LoginregComponent} from './loginreg/loginreg.component';
 import { FooterComponent } from './footer/footer.component';
+
+import {MatRadioModule} from '@angular/material/radio';
+import { LoanTrackerComponent } from './loan-tracker/loan-tracker.component';
+import { PersonalDetailsComponent } from './personal-details/personal-details.component'
 import {AdminLoginComponent} from './admin-login/admin-login.component'
-import { FaqComponent } from './faq/faq.component';
-import { AboutComponent } from './about/about.component';
 import { ElgCalComponent } from './elg-cal/elg-cal.component';
 import { EmiCalComponent } from './emi-cal/emi-cal.component';
 import { ForgotPasswordComponentComponent } from './forgot-password-component/forgot-password-component.component';
 import { UploadFilesComponent } from './upload-files/upload-files.component';
+import { CustomerServiceService } from './services/customer-service.service';
+
+import { FaqComponent } from './faq/faq.component';
+import { AboutComponent } from './about/about.component';
+import { UploadFileService } from './services/upload-file.service';
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+import { AdminVerificationComponent } from './admin-verification/admin-verification.component';
+import {HomeDetailsComponent} from './home-details/home-details.component';
+import {UserDashboardComponent} from './user-dashboard/user-dashboard.component';
+import { UserAppStatusComponent } from './user-app-status/user-app-status.component';
+
+
+
 
 import { CustomerServiceService } from './services/customer-service.service';
 import { SessionService } from './services/session.service';
@@ -54,9 +71,16 @@ import { ShowFileComponent } from './show-file/show-file.component';
     AdminLoginComponent,
     AboutComponent,
     ForgotPasswordComponentComponent,
-	UploadFilesComponent,
-	ShowFileComponent
-      ],
+	  UploadFilesComponent,
+	  ShowFileComponent,
+    LoanTrackerComponent,
+    PersonalDetailsComponent,
+    AdminDashboardComponent,
+    AdminVerificationComponent,
+    HomeDetailsComponent,
+    UserDashboardComponent,
+    UserAppStatusComponent
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -72,9 +96,10 @@ import { ShowFileComponent } from './show-file/show-file.component';
     MatTabsModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatRadioModule
+    MatRadioModule,
+    NgbModule
           ],
-  providers: [CustomerServiceService, SessionService, FilesArrayService],
+  providers: [CustomerServiceService, SessionService, FilesArrayService, UploadFileService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

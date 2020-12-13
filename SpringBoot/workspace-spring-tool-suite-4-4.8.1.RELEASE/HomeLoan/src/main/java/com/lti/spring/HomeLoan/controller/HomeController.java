@@ -115,16 +115,16 @@ public class HomeController {
     	    	
     	Optional<Customer> customer1 = customerDao.findById(customer.getEmailId()); 
 
-    	if(customer1.isEmpty()) {
+    	if(customer1.isPresent()) {
+    		return 0;
+    	}
+    	else {
     		
     		String myHash = getHash(customer.getPassword());    	    
     		customer.setPassword(myHash);
         	customerDao.save(customer);
         	return 2;
 
-    	}
-    	else{
-    		return 0;
     	}
 
     }
