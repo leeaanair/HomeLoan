@@ -13,7 +13,7 @@ export class GetUserService {
 
 	private getUserUrl : string;
 	private getUsersUrl: string;
-
+  private getPDFurl: string;
 	public applicationId : string;
 
   constructor(private http: HttpClient) { 
@@ -21,6 +21,8 @@ export class GetUserService {
   	this.getUserUrl = "http://localhost:8080/getUser";
   	this.getUsersUrl = "http://localhost:8080/getUsers";
   	this.applicationId = "";
+    this.getPDFurl = "http://localhost:8080/getPDF";
+
 
   }
 
@@ -37,6 +39,12 @@ export class GetUserService {
   		return this.http.get(this.getUsersUrl);
   	}
 
+
+  getPDF(id, name): Observable<any>
+  {
+      return this.http.get(this.getPDFurl+"/"+id+"/"+name, {responseType: 'blob'});
+    
+    }
 
 
 }

@@ -102,11 +102,63 @@
    </div>
    <br/>
 
+   <div class="card" style="width:40rem;">
+    <h1>Files</h1>
+    <table class="table table-bordered"> 
+     <tbody>
+       <tr>
+         <td width="43%"><b>PAN card</b></td>
+         <td><button (click)="onClick('PAN')">Click here</button></td>
+       </tr>
+       <tr>
+         <td><b>Voter Id</b></td>
+         <td><button (click)="onClick('VOTER')">Click here</button></td>
+       </tr>
+       <tr>
+         <td><b>Salary Slip</b></td>
+         <td><button (click)="onClick('SALARY')">Click here</button></td>
+       </tr>
+       <tr>
+         <td><b>LOA</b></td>
+         <td><button (click)="onClick('LOA')">Click here</button></td>
+         
+       </tr>
+       <tr>
+         <td><b>NOC</b></td>
+         <td><button (click)="onClick('NOC')">Click here</button></td>
+       </tr>
+       <tr>
+         <td><b>NOC from Builder</b></td>
+         <td><button (click)="onClick('BUILDERNOC')">Click here</button></td>
+       </tr>
+       <tr>
+         <td><b>Agreement from Builder</b></td>
+         <td><button (click)="onClick('BUILDERAGREE')">Click here</button></td>
+       </tr>
+       <tr>
+         <td><b>Agreement to sale</b></td>
+         <td><button (click)="onClick('AGREE')">Click here</button></td>
+       </tr>
+     </tbody>
+   </table>
+    </div>
+    <br/>
+
+
    <div class="card" style="width:40rem; height:45">
     <div class="jumbotron">
    <form [formGroup]="adminForm" (ngSubmit)="onSubmit()">
      
      <table>
+      <tr>
+        <td>
+       <label>status:</label></td> 
+          <select id="status" class="form-control" name="status" style="width:100%;" [formControl]="statusControl">
+          <option [disabled]="statusDisabled" value="approved">Approved</option>
+          <option  [disabled]="statusDisabled"  value="rejected">Rejected</option>
+        </select>        
+      </tr>
+
        <tr>
          <td>
           <label>Account Number:</label>
@@ -117,20 +169,11 @@
         <td>
          <label>Grantable Amount:</label>
         </td>
-        <td> <input type = "number" class="form-control" name="grantable_amount" [formControl]="grantAmountControl" ></td>
-      </tr>
-      <tr>
-        <td>
-       <label>status:</label></td> 
-          <select id="status" class="form-control" name="status" style="width:100%;"  >
-          <option value="0">Approved</option>
-          <option value="1">Pending</option>
-          <option value="2">Rejected</option>
-        </select>        
+        <td> <input type = "number" class="form-control" name="grantable_amount" [formControl]="grantAmountControl" min="0"></td>
       </tr>
       <br/>
       <tr>
-        <td><button class="btn btn-primary" (click)="generate()">Generate Account number</button></td>
+        <td><button class="btn btn-primary" (click)="generate()" [disabled]="adminForm.get('statusControl').value==='rejected' || statusDisabled ">Generate Account number</button></td>
       </tr>
 
       <br/>
@@ -138,7 +181,6 @@
 
         <tr>
           <td><input class="btn btn-primary" type="submit" value="submit"></td>
-          <!--<td><button class="btn btn-danger" (click)="reset1()">clear</button></td>-->
         </tr>
 
   </table>

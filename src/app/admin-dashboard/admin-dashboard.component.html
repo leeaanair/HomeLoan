@@ -12,7 +12,7 @@
       <tbody>
         <tr *ngFor="let id of applicationIdArray; let i = index"> 
           <td>{{i+1}}</td>   
-          <td (click)="getUser()">{{id}}</td>
+          <td (click)="getUser(id)">{{id}}</td>
         </tr>
       </tbody>
     </table>

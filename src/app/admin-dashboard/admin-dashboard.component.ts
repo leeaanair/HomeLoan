@@ -27,8 +27,8 @@ export class AdminDashboardComponent implements OnInit {
   }
 
 
-  getUser(){
-    this.getUserService.applicationId = event.target.innerHTML;
+  getUser(id){
+    this.getUserService.applicationId = id;
   	this.router.navigate(['/adminverification']);
   }
 

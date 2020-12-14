@@ -1,3 +1,4 @@
 export class SessionStorageModel {
-	UserId:string=null
+	UserId:string=null;
+	role:string=null;
 }

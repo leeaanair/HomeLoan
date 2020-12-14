@@ -317,9 +317,8 @@ public class HomeController {
     	loan2=loan1.get(0);
     	
     	loan2.setApplicationStatus(loan.getApplicationStatus());
-    	loan2.setBalance(loan.getBalance());
     	if(loan.getApplicationStatus().equals("accepted")) {
-    		
+        	loan2.setBalance(loan.getBalance());
         	loan2.setAccountNumber(loan.getAccountNumber());
     	}
     	

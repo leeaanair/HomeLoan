@@ -7,10 +7,10 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
   templateUrl: './loan-tracker.component.html',
   styleUrls: ['./loan-tracker.component.css']
 })
-export class LoanTrackerComponent implements OnInit{
+export class LoanTrackerComponent{
 
   regForm: FormGroup;
-  mobilenoControl: FormControl;
+  applicationControl: FormControl;
   emailControl: FormControl;
   currentStep: number = 0;// This will have value of application_status , value starts from 0 to 2.
   processing:Boolean;
@@ -18,17 +18,10 @@ export class LoanTrackerComponent implements OnInit{
   
   constructor(formBuilder: FormBuilder) {
     this.emailControl = new FormControl("", Validators.compose([Validators.required, Validators.pattern("[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$")]));
-    this.mobilenoControl = new FormControl("", Validators.compose([Validators.required, Validators.max(9999999999), Validators.min(1000000000), Validators.pattern("[a-zA-Z ]*")]));
+    this.applicationControl = new FormControl("", Validators.compose([Validators.required, Validators.minLength(10), Validators.maxLength(10)]));
 
   }
 
-  ngOnInit(): void {
-    this.processing = true;
-    setTimeout(() => {
-      this.currentStep = 1;   //directly giving the value 
-      this.processing = false;
-    }, 1500);
-  }
   onSubmit() {
 
   }
