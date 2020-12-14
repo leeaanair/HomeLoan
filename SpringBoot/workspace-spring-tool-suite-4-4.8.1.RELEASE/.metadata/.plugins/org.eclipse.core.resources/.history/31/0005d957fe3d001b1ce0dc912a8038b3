@@ -230,8 +230,6 @@ public class HomeController {
     	Customer newCustomer = customerDao.findById(email).orElse(null);
     	customer.setFname(newCustomer.getFname());
     	customer.setLname(newCustomer.getLname());
-    	customer.setMname(newCustomer.getMname());
-    	
     	customer.setPassword(newCustomer.getPassword());
     	customerDao.save(customer);
     	
