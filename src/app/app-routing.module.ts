@@ -29,7 +29,7 @@ const routes: Routes = [
   {path: 'faq', component:FaqComponent},
   {path: 'stepper', component:StepperComponentComponent},
   {path: 'forgot', component: ForgotPasswordComponentComponent},
-  {path: 'submitFiles', component: UploadFilesComponent}
+  {path: 'submitFiles', component: UploadFilesComponent},
   {path: 'aboutus', component:AboutComponent},
   {path: 'admindashboard', component: AdminDashboardComponent},
   {path: 'adminverification', component: AdminVerificationComponent}
