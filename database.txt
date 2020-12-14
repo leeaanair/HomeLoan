@@ -10,9 +10,8 @@ phoneNumber varchar2(13),
 gender varchar2(2),
 pancard varchar2(12),
 aadhaar varchar2(14),
-nationality varchar2(20),
-accountNo varchar2(13) default null,
-balance number(20, 2) default 0
+nationality varchar2(20)
+
 );
 
 create table loan (
@@ -21,7 +20,9 @@ emailId CONSTRAINT emailId REFERENCES customer(emailId),
 loanAmount number(20,2) not null,
 tenure number(20, 2) not null,
 calculatedEmi number(20,2) not null,
-applicationStatus varchar2(20) not null
+applicationStatus varchar2(20) not null,
+accountNo varchar2(13) default null,
+balance number(20, 2) default 0
 );
 
 
