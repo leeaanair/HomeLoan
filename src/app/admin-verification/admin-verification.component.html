@@ -1,0 +1,195 @@
+<div class="card" style="width:40rem;">
+  <table class="table table-bordered"> 
+     <tbody>
+       <h1>Personal Details</h1>
+         <tr> 
+             <td><b>Application Id</b></td>
+             
+             <td>{{appid}}</td>
+           </tr>
+       <tr> 
+         <td><b>First Name</b></td>
+         <td>{{firstName}}</td>
+       </tr>
+       <tr>
+         <td><b>Middle Name </b></td>
+         <td>{{middleName}}</td>
+       </tr>
+       <tr>
+         <td><b>Last Name</b></td>
+         <td>{{lastName}}</td>
+       </tr>
+       <tr>
+         <td><b>Email</b></td>
+         <td>{{email}}
+         </td>
+       </tr>
+       <tr>
+         <td><b>Address</b></td>
+         <td>{{address}}</td>
+       </tr>
+       <tr>
+         <td><b>Date Of Birth</b></td>
+         <td>{{dateOfBirth}}</td>
+       </tr>
+       <tr>
+         <td><b>Phone Number</b></td>
+         <td>{{phoneNumber}}</td>
+       </tr>
+       <tr>
+         <td><b>Gender</b></td>
+         <td>{{gender}}</td>
+       </tr>
+       <tr>
+         <td><b>PAN Card</b></td>
+         <td>{{pancard}}</td>
+       </tr>
+       <tr>
+         <td><b>Aadhar Card</b></td>
+         <td>{{aadharcard}}</td>
+       </tr>
+       <tr>
+         <td><b>Nationality</b></td>
+         <td>{{nationality}}</td>
+       </tr>
+     </tbody>
+   </table>
+   </div>
+   <br/>
+  <br/>
+
+  
+  <div class="card" style="width:40rem;">
+    <h1>Loan Details</h1>
+   <table class="table table-bordered"> 
+    <tbody>
+      <tr>
+        <td width="43%"><b>Loan Amount</b></td>
+        <td>{{loanAmount}}</td>
+      </tr>
+      <tr>
+        <td><b>Tenure</b></td>
+        <td>{{tenure}}</td>
+      </tr>
+      <tr>
+        <td><b>Property location</b></td>
+        <td>{{propertyLocation}}</td>
+      </tr>
+      <tr>
+        <td><b>Property Name</b></td>
+        <td>{{propertyLocation}}</td>
+      </tr>
+      <tr>
+        <td><b>Estimated amount</b></td>
+        <td>{{eamount}}</td>
+      </tr>
+      <tr>
+        <td><b>Employment type</b></td>
+        <td>{{emptype}}</td>
+      </tr>
+      <tr>
+        <td><b>Employer name</b></td>
+        <td>{{employername}}</td>
+      </tr>
+      <tr>
+        <td><b>Retirement Age</b></td>
+        <td>{{rAge}}</td>
+      </tr>
+      <tr>
+        <td><b>Monthly salary</b></td>
+        <td>{{salary}}</td>
+      </tr>
+    </tbody>
+  </table>
+   </div>
+   <br/>
+
+   
+   <div class="card" style="width:40rem;">
+    <h1>Files</h1>
+    <table class="table table-bordered"> 
+     <tbody>
+       <tr>
+         <td width="43%"><b>PAN card</b></td>
+         <td><button (click)="onClick()">Click here</button></td>
+       </tr>
+       <tr>
+         <td><b>Voter Id</b></td>
+         <td><button (click)="onClick()">Click here</button></td>
+       </tr>
+       <tr>
+         <td><b>Salary Slip</b></td>
+         <td><button (click)="onClick()">Click here</button></td>
+       </tr>
+       <tr>
+         <td><b>LOA</b></td>
+         <td><button (click)="onClick()">Click here</button></td>
+         
+       </tr>
+       <tr>
+         <td><b>NOC</b></td>
+         <td><button (click)="onClick()">Click here</button></td>
+       </tr>
+       <tr>
+         <td><b>NOC from Builder</b></td>
+         <td><button (click)="onClick()">Click here</button></td>
+       </tr>
+       <tr>
+         <td><b>Agreement from Builder</b></td>
+         <td><button (click)="onClick()">Click here</button></td>
+       </tr>
+       <tr>
+         <td><b>Agreement to sale</b></td>
+         <td><button (click)="onClick()">Click here</button></td>
+       </tr>
+     </tbody>
+   </table>
+    </div>
+    <br/>
+ 
+   <div class="card" style="width:40rem; height:45">
+    <div class="jumbotron">
+   <form [formGroup]="adminForm" (ngSubmit)="onSubmit()">
+     
+     <table>
+       <tr>
+         <td>
+          <label>Account Number:</label>
+         </td>
+         <td> <input type = "text" class="form-control" name="account_number" value={{randomNumber}} readonly [formControl]="accountNumberControl"></td>
+       </tr>
+       <tr>
+        <td>
+         <label>Grantable Amount:</label>
+        </td>
+        <td> <input type = "number" class="form-control" name="grantable_amount" [formControl]="grantAmountControl" ></td>
+      </tr>
+      <tr>
+        <td>
+       <label>status:</label></td> 
+          <select id="status" class="form-control" name="status" style="width:100%;"  >
+          <option value="0">Approved</option>
+          <option value="1">Pending</option>
+          <option value="2">Rejected</option>
+        </select>        
+      </tr>
+      <br/>
+      <tr>
+        <td><button class="btn btn-primary" (click)="generate()">Generate Account number</button></td>
+      </tr>
+
+      <br/>
+      <br/>
+
+        <tr>
+          <td><input class="btn btn-primary" type="submit" value="submit"></td>
+          <!--<td><button class="btn btn-danger" (click)="reset1()">clear</button></td>-->
+        </tr>
+
+  </table>
+  </form>
+   </div>
+  </div>
+
+
+

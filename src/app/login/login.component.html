@@ -25,10 +25,16 @@
                  
                  <div class="form-group">
                     <input type="submit" class="btn btn-primary" name="submit" value="Login" >
+                    <button class="btn btn-primary button forgot-btn" (click)="forgot()">Forgot Password</button>                    
                  </div>
                 </div>
          </form> 
          </div>  
+
+                    <div class="alert" *ngIf="isLoginRight==0">
+                            Incorrect Login Credentials!   
+                    </div>
+
      </div>   
 
 

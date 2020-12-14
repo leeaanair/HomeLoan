@@ -1,26 +1,30 @@
-<app-emi-cal></app-emi-cal>
-<div class="card" style="width:30rem;">
-<div class="container"> 
-<p style="color: #383475; font-weight: bold;">Loan Eligibility Calculator</p>
 
-<input type="text" placeholder="Monthly Income" [(ngModel)]="monthlyincome" class="form-control" (blur)="rupdate()"
- style="widows: 50px;float:left;">
-<!--<p> {{monthlyincome}}</p>-->
 
-<input type = "button" value = "Calculate"> 
 
-<div class="jusify-center" >
-    <br>
-    <h4 style="color: #383475; font-weight: bold;">
-      Available Loan Amount
-    </h4>
-    <span class="result">
-     
- Rs {{test}} 
-
-    </span>
-  </div>
-</div>
-</div>
-
+<html>
+  <body>
+    <app-emi-cal></app-emi-cal>
+    <div class="container"> 
+      <p style="color: #383475; font-weight: bold; ">Loan Eligibility Calculator</p>
+      
+      <input type="text" placeholder="Monthly Income" [(ngModel)]="monthlyincome" class="form-control" (blur)="rupdate()"
+       style="widows: 50px;float:left;">
+      <!--<p> {{monthlyincome}}</p>-->
+      
+      <input type = "button" value = "Calculate"> 
+      
+      <div class="jusify-center" >
+          <br>
+          <h4 style="color: #383475; font-weight: bold;">
+            Available Loan Amount
+          </h4>
+          <span class="result">
+           
+       Rs {{test}} 
+      
+          </span>
+        </div>
+      </div>
+  </body>
+</html>
 
