@@ -11,18 +11,27 @@ import { Observable } from 'rxjs';
 })
 export class GetUserService {
 
-	private getUserUrl : String
+	private getUserUrl : string;
+	private getUsersUrl: string;
+
   constructor(private http: HttpClient) { 
 
   	this.getUserUrl = "http://localhost:8080/getUser";
+  	this.getUsersUrl = "http://localhost:8080/getUsers";
 
   }
 
-//get user based on application id
+	//get user based on application id
   	getUser(id): Observable<any>{
 
   		return this.http.get(this.getUserUrl+"/"+id, {responseType: 'text'});
 
+  	}
+
+
+  	getUsers(): Observable<any>{
+
+  		return this.http.get(this.getUsersUrl);
   	}
 
 

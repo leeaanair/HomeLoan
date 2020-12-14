@@ -1,4 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { Routes, RouterModule, Router } from '@angular/router';
+
+
+
+import { GetUserService } from '../services/get-user.service';
 
 @Component({
   selector: 'app-admin-dashboard',
@@ -7,9 +13,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminDashboardComponent implements OnInit {
 
-  constructor() { }
+	applicationIdArray : string[];
+
+  constructor(public getUserService : GetUserService, private router: Router) {
+
+  	this.applicationIdArray = [];
+   }
 
   ngOnInit(): void {
+
+  	this.getUserService.getUsers().subscribe(result => (this.applicationIdArray = result));
+
+  }
+
+
+  getUser(){
+
+  	this.router.navigate(['/adminverification']);
   }
 
 }

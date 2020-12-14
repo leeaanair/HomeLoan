@@ -37,7 +37,6 @@ import { UploadFilesComponent } from './upload-files/upload-files.component';
 
 import { FaqComponent } from './faq/faq.component';
 import { AboutComponent } from './about/about.component';
-import { UploadFileService } from './services/upload-file.service';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { AdminVerificationComponent } from './admin-verification/admin-verification.component';
 import {HomeDetailsComponent} from './home-details/home-details.component';
@@ -97,7 +96,7 @@ import { ShowFileComponent } from './show-file/show-file.component';
     MatRadioModule,
     NgbModule
           ],
-  providers: [CustomerServiceService, SessionService, FilesArrayService, UploadFileService],
+  providers: [CustomerServiceService, SessionService, FilesArrayService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
