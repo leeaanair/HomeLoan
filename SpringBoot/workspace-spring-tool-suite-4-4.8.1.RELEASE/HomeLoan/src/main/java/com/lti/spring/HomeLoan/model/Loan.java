@@ -15,6 +15,7 @@ public class Loan {
 	
 	@Id
 	@Column(name = "applicationnumber")
+	@JsonProperty("applicationId")
 	private String applicationNumber;
 
 	@Column(name = "emailid")
@@ -32,11 +33,42 @@ public class Loan {
 	private double calculatedEmi;
 	
 	@Column(name = "applicationstatus")
+	@JsonProperty("applicationStatus")
 	private String applicationStatus;
+	
+	@Column(name="accountno")
+    @JsonProperty("accountNumber")
+	private String accountNumber;
+	
+	@Column(name="balance")
+    @JsonProperty("balance")
+	private long balance;
+
+
+	public String getAccountNumber() {
+		return accountNumber;
+	}
+
+
+	public void setAccountNumber(String accountNumber) {
+		this.accountNumber = accountNumber;
+	}
+
+
+	public long getBalance() {
+		return balance;
+	}
+
+
+	public void setBalance(long balance) {
+		this.balance = balance;
+	}
+
 
 	public String getApplicationNumber() {
 		return applicationNumber;
 	}
+	
 
 	public void setApplicationNumber(String applicationNumber) {
 		this.applicationNumber = applicationNumber;
@@ -82,13 +114,14 @@ public class Loan {
 		this.applicationStatus = applicationStatus;
 	}
 
+
 	@Override
 	public String toString() {
 		return "Loan [applicationNumber=" + applicationNumber + ", emailId=" + emailId + ", loanAmount=" + loanAmount
 				+ ", tenure=" + tenure + ", calculatedEmi=" + calculatedEmi + ", applicationStatus=" + applicationStatus
-				+ "]";
+				+ ", accountNumber=" + accountNumber + ", balance=" + balance + "]";
 	}
-	
+
 	
 
 }

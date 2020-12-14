@@ -7,6 +7,7 @@ import java.nio.file.Paths;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -44,6 +45,7 @@ import com.lti.spring.HomeLoan.model.Customer;
 import com.lti.spring.HomeLoan.model.EmbeddedKey;
 import com.lti.spring.HomeLoan.model.EmploymentDetails;
 import com.lti.spring.HomeLoan.model.ForgotPassword;
+import com.lti.spring.HomeLoan.model.GetUsers;
 import com.lti.spring.HomeLoan.model.Loan;
 import com.lti.spring.HomeLoan.model.PropertyDetails;
 
@@ -110,6 +112,7 @@ public class HomeController {
     }
     
     
+    //user registration
     @PostMapping(value="/customer", consumes = "application/json")
     public int addUser(@RequestBody Customer customer) throws NoSuchAlgorithmException {
     	    	
@@ -129,6 +132,7 @@ public class HomeController {
 
     }
     
+    //user login
     @PostMapping(value="/loginuser", consumes = "application/json")
     public int loginUser(@RequestBody Customer customer) throws NoSuchAlgorithmException {
     
@@ -144,7 +148,7 @@ public class HomeController {
     }
     
     
-
+    //forgot password
     @PostMapping(value="/forgotpassword", consumes = "application/json")
     public int forgotPassword(@RequestBody ForgotPassword forgotPassword ) throws NoSuchAlgorithmException {
     	
@@ -175,7 +179,7 @@ public class HomeController {
     }
     
        
-    
+    //uploading data and files
     @PostMapping(value="/uploadApplication2",consumes = {MediaType.MULTIPART_FORM_DATA_VALUE, "application/json"})
     public String uploadApplication2(@RequestPart("pan") MultipartFile pan, @RequestPart("voter") MultipartFile voter, 
     		@RequestPart("salary") MultipartFile salary, @RequestPart("loa") MultipartFile loa, @RequestPart("noc") MultipartFile noc,
@@ -242,6 +246,7 @@ public class HomeController {
     }
 
     
+    //gettin user details based on application id
 	@GetMapping(value="/getUser/{id}")
     public ResponseEntity<Application> getUser(@PathVariable ("id") String id) {
     	
@@ -260,14 +265,9 @@ public class HomeController {
     }
 	
 	
+	//admin view the pdf based on application id and name
 	@GetMapping("/getPDF/{id}/{name}")
 	public ResponseEntity<ByteArrayResource> downloadFile(@PathVariable ("id") String id, @PathVariable ("name" ) String name) throws Exception {
-//		File file = new File("./uploads/Resume.pdf");
-//       FileInputStream fileInputStream = new FileInputStream(file);
-//       return IOUtils.toByteArray(fileInputStream);
-//		//return new ResponseEntity<byte[]>(isr, respHeaders, HttpStatus.OK);
-		
-		
 		File file = new File("uploads/"+id+"/"+name);
 
         HttpHeaders header = new HttpHeaders();
@@ -284,17 +284,15 @@ public class HomeController {
                 .body(resource);
 	}
 	
-//	@GetMapping(value="/getUsers")
-//	public ResponseEntity<String[]> getUsers(){
-//		
-//		
-//	}
 	
+	//admin login
     @PostMapping(value="/adminlogin", consumes = "application/json")
     public int loginUser(@RequestBody Admin admin) throws NoSuchAlgorithmException {
     	
     	
     	String password = admin.getPassword();
+    	System.out.println(password);
+    	System.out.println(admin.getUsername());
     	List<Admin> admin1 = admindao.findAdminByEmailAndPassword(admin.getUsername(),password);
     	if(admin1.isEmpty()) {
     		return 0;
@@ -303,7 +301,52 @@ public class HomeController {
         	return 2;    		
     	}
     }
-
-//
+    
+    
+    //admin changes the application status
+    @PostMapping(value="/adminverification", consumes = "application/json")
+    public int appVerifyloginUser(@RequestBody Loan loan) throws NoSuchAlgorithmException {
+    	
+    	String id = loan.getApplicationNumber();
+    	System.out.println(id);
+    	List<Loan> loan1 = loanDao.findByApplicationId(id); 
+    	Loan  loan2 = new Loan();
+    	
+    	loan2=loan1.get(0);
+    	
+    	loan2.setApplicationStatus(loan.getApplicationStatus());
+    	loan2.setBalance(loan.getBalance());
+    	if(loan.getApplicationStatus().equals("accepted")) {
+    		
+        	loan2.setAccountNumber(loan.getAccountNumber());
+    	}
+    	
+    	loanDao.save(loan2);
+    	
+    	//what to return ?
+    	return 1;
+    }
+    
+    
+    //loan tracker
+    @GetMapping(value="/userstatus", consumes = "application/json")
+    public Loan userStats(@RequestBody Loan loan) throws NoSuchAlgorithmException {
+    	
+    	String id = loan.getApplicationNumber();
+    	List<Loan> loan1 = loanDao.findByApplicationId(id);	
+    	System.out.println(loan1.get(0));
+    	//what to return ?
+    	return loan1.get(0);
+    }
+    
+    @GetMapping(value="/getUsers")
+    public List<String> getUsers() throws NoSuchAlgorithmException{
+    	
+    	List<String> applicationId = loanDao.getAllApplicationId("pending");
+    	System.out.println(applicationId);
+    	return applicationId;
+    	
+    	
+    }
 	
 }

@@ -33,8 +33,6 @@ const routes: Routes = [
   {path: 'aboutus', component:AboutComponent},
   {path: 'admindashboard', component: AdminDashboardComponent},
   {path: 'adminverification', component: AdminVerificationComponent}
-
-
 ];
 
 @NgModule({

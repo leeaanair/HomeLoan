@@ -14,7 +14,4 @@ export class Customer {
 	pancard : string;
 	aadhaar : string;
 	nationality : string;
-	accountNumber : string;
-	balance : number;
-
 }

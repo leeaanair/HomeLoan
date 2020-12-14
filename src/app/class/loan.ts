@@ -8,5 +8,8 @@ export class Loan {
 	tenure : number;
 	calculatedEmi : number;
 	applicationStatus : string;
+	accountNumber : string;
+	balance : number;
+
 
 }

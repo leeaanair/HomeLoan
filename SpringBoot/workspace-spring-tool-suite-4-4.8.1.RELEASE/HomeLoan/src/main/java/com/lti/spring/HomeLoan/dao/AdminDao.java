@@ -12,7 +12,7 @@ import com.lti.spring.HomeLoan.model.Admin;
 @Repository
 public interface AdminDao extends CrudRepository <Admin, String> {
 	
-			@Query("from Admin where username= ?1 and password=?2")
+			@Query("from Admin where username=?1 and password=?2")
 			List<Admin> findAdminByEmailAndPassword(String username, String password);
 
 	

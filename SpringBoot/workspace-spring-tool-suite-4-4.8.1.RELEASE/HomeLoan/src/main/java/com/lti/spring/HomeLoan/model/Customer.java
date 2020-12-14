@@ -67,13 +67,7 @@ public class Customer {
     @JsonProperty("nationality")
 	private String nationality;
 	
-	@Column(name="accountno")
-    @JsonProperty("accountNumber")
-	private String accountNumber;
-	
-	@Column(name="balance")
-    @JsonProperty("balance")
-	private long balance;
+
 
 	public String getFname() {
 		return fname;
@@ -171,28 +165,13 @@ public class Customer {
 		this.nationality = nationality;
 	}
 
-	public String getAccountNumber() {
-		return accountNumber;
-	}
-
-	public void setAccountNumber(String accountNumber) {
-		this.accountNumber = accountNumber;
-	}
-
-	public long getBalance() {
-		return balance;
-	}
-
-	public void setBalance(long balance) {
-		this.balance = balance;
-	}
 
 	@Override
 	public String toString() {
 		return "Customer [fname=" + fname + ", mname=" + mname + ", lname=" + lname + ", emailId=" + emailId
 				+ ", address=" + address + ", password=" + password + ", dateOfBirth=" + dateOfBirth + ", phoneNumber="
 				+ phoneNumber + ", gender=" + gender + ", pancard=" + pancard + ", aadhaar=" + aadhaar
-				+ ", nationality=" + nationality + ", accountNumber=" + accountNumber + ", balance=" + balance + "]";
+				+ ", nationality=" + nationality + "]";
 	}
 	
 	
