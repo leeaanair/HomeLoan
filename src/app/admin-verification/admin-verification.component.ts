@@ -181,7 +181,20 @@ export class AdminVerificationComponent implements OnInit {
     this.loan.applicationStatus = this.adminForm.get('statusControl').value;
     this.loan.accountNumber = this.randomNumber;
     this.loan.balance = this.loanAmount;
-    this.loan.calculatedEmi = this.loanAmount*8.5*(Math.pow(1+8.5, this.tenure)/((Math.pow(1+8.5, this.tenure))-1))
+
+
+
+//(1+R)^n
+
+    var rate = (8.5*12)/100;
+    var top = Math.pow((1 + rate), this.tenure*12);
+ //(1+R)^n - 1   
+    var bottom = top - 1;
+    var sp = top / bottom;
+    //P*R*sp(calculated above)
+    this.loan.calculatedEmi = ((this.loanAmount * rate) * sp);
+
+    //this.loan.calculatedEmi = this.loanAmount*8.5*(Math.pow(1+8.5, this.tenure*12)/((Math.pow(1+8.5, this.tenure*12))-1))
 
 
     }
@@ -196,12 +209,11 @@ export class AdminVerificationComponent implements OnInit {
 
     if(result === 1){
 
-      alert("Loan has been changed");
+      alert("Loan status was successfully changed");
 
     }
 
-        this.router.navigate(['/admindashboard'])
-
+        this.router.navigate(['/admindashboard']);
 
   }
     

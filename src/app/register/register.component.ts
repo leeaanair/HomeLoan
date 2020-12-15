@@ -20,6 +20,7 @@ export class RegisterComponent {
 	  regForm : FormGroup;
     firstnameControl : FormControl;
     lastnameControl : FormControl;
+    middlenameControl : FormControl;
     emailControl : FormControl;
     passwordControl : FormControl;
     confirmpasswordControl : FormControl;
@@ -27,6 +28,7 @@ export class RegisterComponent {
   constructor(formBuilder : FormBuilder, private route: ActivatedRoute, private router: Router, private customerService: CustomerServiceService) {
 
   this.firstnameControl = new FormControl("",Validators.compose([Validators.required,Validators.minLength(3), Validators.pattern("[a-zA-Z ]*")]));
+  this.middlenameControl = new FormControl("",Validators.compose([Validators.minLength(3), Validators.pattern("[a-zA-Z ]*")]));
   this.lastnameControl = new FormControl("",Validators.compose([Validators.required,Validators.minLength(3), Validators.pattern("[a-zA-Z ]*")]));
   this.emailControl = new FormControl("",Validators.compose([Validators.required,Validators.pattern("[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$")]));
   this.passwordControl = new FormControl("",Validators.compose([Validators.required,Validators.minLength(6)]));
@@ -37,6 +39,7 @@ export class RegisterComponent {
 
     firstnameControl: this.firstnameControl,
     lastnameControl : this.lastnameControl,
+    middlenameControl : this.middlenameControl,
     emailControl : this.emailControl,
     passwordControl : this.passwordControl,
     confirmpasswordControl : this.confirmpasswordControl
@@ -52,6 +55,7 @@ export class RegisterComponent {
 
         console.log("this was called");
         this.customer.fname = this.regForm.get("firstnameControl").value;
+        this.customer.mname = this.regForm.get("middlenameControl").value;
         this.customer.lname = this.regForm.get("lastnameControl").value;
         this.customer.emailId = this.regForm.get("emailControl").value;
         this.customer.password = this.regForm.get("passwordControl").value;
@@ -62,7 +66,9 @@ export class RegisterComponent {
 
   //successfully registered
     if(result==2){
-      this.router.navigate(['/']);     
+      this.router.navigate(['/']);   
+      alert("Successfully registered in");
+  
 
     }
     

@@ -110,7 +110,7 @@ export class StepperComponentComponent implements OnInit {
     Submit(){
 
       //adding data in customer object
-      console.log(this.sessionService.get("UserId"));
+      // console.log(this.sessionService.get("UserId"));
       
       this.customer.nationality = this.fourthFormGroup.value.nationalityControl;
       this.customer.aadhaar = this.fourthFormGroup.value.anoControl;
@@ -141,7 +141,7 @@ export class StepperComponentComponent implements OnInit {
       this.propertyDetails.propertyName = this.firstFormGroup.value.pnameControl;
       this.propertyDetails.estimatedAmount = this.firstFormGroup.value.amountControl;
 
-      this.embeddedKey.emailId = this.sessionService.get("UserId");
+      this.embeddedKey.emailId = sessionStorage.getItem("username");
 
 
       this.application.customer = this.customer;
@@ -177,6 +177,8 @@ export class StepperComponentComponent implements OnInit {
         console.log(result);
 
         alert("Your application id is "+result+". Please note it for future use");
+
+        this.router.navigate(['/userdashboard']);
 
 
     }

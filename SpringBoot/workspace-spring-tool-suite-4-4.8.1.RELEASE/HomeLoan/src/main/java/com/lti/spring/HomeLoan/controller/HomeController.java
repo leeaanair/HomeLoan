@@ -7,9 +7,9 @@ import java.nio.file.Paths;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -34,6 +34,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.lti.spring.HomeLoan.dao.AdminDao;
+import com.lti.spring.HomeLoan.dao.ConfirmationDao;
 import com.lti.spring.HomeLoan.dao.CustomerDao;
 import com.lti.spring.HomeLoan.dao.EmploymentDao;
 import com.lti.spring.HomeLoan.dao.FileStorageService;
@@ -41,11 +42,11 @@ import com.lti.spring.HomeLoan.dao.LoanDao;
 import com.lti.spring.HomeLoan.dao.PropertyDao;
 import com.lti.spring.HomeLoan.model.Admin;
 import com.lti.spring.HomeLoan.model.Application;
+import com.lti.spring.HomeLoan.model.ConfirmationTable;
 import com.lti.spring.HomeLoan.model.Customer;
 import com.lti.spring.HomeLoan.model.EmbeddedKey;
 import com.lti.spring.HomeLoan.model.EmploymentDetails;
 import com.lti.spring.HomeLoan.model.ForgotPassword;
-import com.lti.spring.HomeLoan.model.GetUsers;
 import com.lti.spring.HomeLoan.model.Loan;
 import com.lti.spring.HomeLoan.model.PropertyDetails;
 
@@ -80,6 +81,11 @@ public class HomeController {
     
 	@Autowired
 	private AdminDao admindao;
+	
+	
+	@Autowired
+	private ConfirmationDao confirmationDao;
+	
     
 	static final String AB = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 	static SecureRandom rnd = new SecureRandom();
@@ -166,17 +172,38 @@ public class HomeController {
     	
     	else{
     		
+    		ConfirmationTable confirmationTable = new ConfirmationTable();
+    		confirmationTable.setEmailId(email);
+    		confirmationTable.setConfirmationToken(UUID.randomUUID().toString());
+    		confirmationDao.save(confirmationTable);
+    		
             SimpleMailMessage message = new SimpleMailMessage(); 
             message.setFrom("noreply@ltihomeloan.com");
             message.setTo(email); 
             message.setSubject("Reset password for HomeLoan"); 
-            message.setText("Hello this is a test mail");
+            message.setText("Hello. This is the link to reset your password. \n http:localhost:4200/reset?token="+confirmationTable.getConfirmationToken());
             emailSender.send(message);
 
     		return 1;
     	}
 
     }
+    
+//    
+    @PostMapping(value="/resetPassword")
+    public int resetPassword(@RequestBody ConfirmationTable confirmation) throws NoSuchAlgorithmException{
+    	
+    	System.out.println(confirmation);
+    	String email = confirmationDao.findByConfirmationToken(confirmation.getConfirmationToken()).get(0).getEmailId();
+    	Customer customer = customerDao.findById(email).get();
+    	
+		String myHash = getHash(confirmation.getPassword());    	        	
+    	customer.setPassword(myHash);
+    	customerDao.save(customer);
+    	return 1;
+    	
+    }
+//    
     
        
     //uploading data and files
