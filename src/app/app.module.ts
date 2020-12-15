@@ -50,6 +50,7 @@ import { CustomerServiceService } from './services/customer-service.service';
 import { SessionService } from './services/session.service';
 import { FilesArrayService } from './services/files-array.service';
 import { AdminLoginServiceService } from './services/adminlogin-service.service';
+import { CalculatorsComponent } from './calculators/calculators.component';
 
 @NgModule({
   declarations: [
@@ -75,7 +76,8 @@ import { AdminLoginServiceService } from './services/adminlogin-service.service'
     AdminVerificationComponent,
     HomeDetailsComponent,
     UserDashboardComponent,
-    UserAppStatusComponent
+    UserAppStatusComponent,
+    CalculatorsComponent
   ],
   imports: [
     BrowserModule,

@@ -309,17 +309,23 @@ public class HomeController {
     @PostMapping(value="/adminverification", consumes = "application/json")
     public int appVerifyloginUser(@RequestBody Loan loan) throws NoSuchAlgorithmException {
     	
+    	System.out.println("the verified application is " + loan);
     	String id = loan.getApplicationNumber();
     	System.out.println(id);
     	List<Loan> loan1 = loanDao.findByApplicationId(id); 
     	Loan  loan2 = new Loan();
     	
+    	System.out.println("generated account is "  + loan.getAccountNumber());
+    	System.out.println("calcualted emi is  " + loan.getCalculatedEmi());
+    	System.out.println("balance is  " + loan.getBalance());
+    	
     	loan2=loan1.get(0);
     	
     	loan2.setApplicationStatus(loan.getApplicationStatus());
-    	if(loan.getApplicationStatus().equals("accepted")) {
+    	if(loan.getApplicationStatus().equals("approved")) {
         	loan2.setBalance(loan.getBalance());
         	loan2.setAccountNumber(loan.getAccountNumber());
+        	loan2.setCalculatedEmi(loan.getCalculatedEmi());
     	}
     	
     	loanDao.save(loan2);
@@ -330,13 +336,12 @@ public class HomeController {
     
     
     //loan tracker
-    @GetMapping(value="/userstatus", consumes = "application/json")
-    public Loan userStats(@RequestBody Loan loan) throws NoSuchAlgorithmException {
+    @GetMapping(value="/userstatus/{id}/{email}")
+    public Loan userStats(@PathVariable ("id") String id, @PathVariable ("email") String email) throws NoSuchAlgorithmException {
     	
-    	String id = loan.getApplicationNumber();
-    	List<Loan> loan1 = loanDao.findByApplicationId(id);	
+    	System.out.println("user status is called");
+    	List<Loan> loan1 = loanDao.findByApplicationIdAndEmail(id, email);	
     	System.out.println(loan1.get(0));
-    	//what to return ?
     	return loan1.get(0);
     }
     

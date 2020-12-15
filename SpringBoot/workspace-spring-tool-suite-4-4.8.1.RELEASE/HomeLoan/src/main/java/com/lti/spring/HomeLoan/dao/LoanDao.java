@@ -17,6 +17,10 @@ public interface LoanDao extends CrudRepository<Loan, EmbeddedKey> {
 	
 	@Query("select r.applicationNumber from Loan r where r.applicationStatus= :status")
 	public List<String> getAllApplicationId(@Param("status") String status);
+	
+	
+	@Query("from Loan where applicationNumber=?1 and emailId = ?2")
+	public List<Loan> findByApplicationIdAndEmail(String id, String email);
 
 
 }

@@ -81,7 +81,6 @@ export class AdminVerificationComponent implements OnInit {
 
 
     this.accountNumberControl = new FormControl();
-    this.grantAmountControl = new FormControl({disabled:true});
     this.statusControl = new FormControl();
 
 
@@ -89,7 +88,6 @@ export class AdminVerificationComponent implements OnInit {
 
 
     accountNumberControl : this.accountNumberControl,
-    grantAmountControl : this.grantAmountControl,
     statusControl : this.statusControl
 
 
@@ -109,7 +107,7 @@ export class AdminVerificationComponent implements OnInit {
 
   generate(){
     this.randomNumber = Math.floor(1000000000+ Math.random() * 9000000000);
-    //console.log(this.randomNumber);
+    return 0;
   }
 
 
@@ -167,6 +165,9 @@ export class AdminVerificationComponent implements OnInit {
 
   onSubmit(){
 
+
+    console.log("the generated account number was " + this.randomNumber);
+
     this.loan.applicationId = this.appid;
 
     if(this.statusDisabled){
@@ -176,9 +177,11 @@ export class AdminVerificationComponent implements OnInit {
 
     else{
 
+    console.log("the generated accountNumber is " + this.randomNumber);
     this.loan.applicationStatus = this.adminForm.get('statusControl').value;
-    this.loan.accountNumber = this.adminForm.get('accountNumberControl').value;
-    this.loan.balance = this.adminForm.get('grantAmountControl').value;
+    this.loan.accountNumber = this.randomNumber;
+    this.loan.balance = this.loanAmount;
+    this.loan.calculatedEmi = this.loanAmount*8.5*(Math.pow(1+8.5, this.tenure)/((Math.pow(1+8.5, this.tenure))-1))
 
 
     }
@@ -188,11 +191,6 @@ export class AdminVerificationComponent implements OnInit {
 
 
   }
-
-  reset1(){
-    this.adminForm.reset(this.adminForm.value);
-  }
-
 
   getResult(result){
 

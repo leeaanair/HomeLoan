@@ -147,7 +147,7 @@
 
    <div class="card" style="width:40rem; height:45">
     <div class="jumbotron">
-   <form [formGroup]="adminForm" (ngSubmit)="onSubmit()">
+   <form [formGroup]="adminForm">
      
      <table>
       <tr>
@@ -165,12 +165,6 @@
          </td>
          <td> <input type = "text" class="form-control" name="account_number" value={{randomNumber}} readonly [formControl]="accountNumberControl"></td>
        </tr>
-       <tr>
-        <td>
-         <label>Grantable Amount:</label>
-        </td>
-        <td> <input type = "number" class="form-control" name="grantable_amount" [formControl]="grantAmountControl" min="0"></td>
-      </tr>
       <br/>
       <tr>
         <td><button class="btn btn-primary" (click)="generate()" [disabled]="adminForm.get('statusControl').value==='rejected' || statusDisabled ">Generate Account number</button></td>
@@ -180,7 +174,7 @@
       <br/>
 
         <tr>
-          <td><input class="btn btn-primary" type="submit" value="submit"></td>
+          <td><button (click)="onSubmit()" class="btn btn-primary" value="submit">Submit</button></td>
         </tr>
 
   </table>
