@@ -1,0 +1,79 @@
+create table customer (
+fname varchar2(255) not null,
+mname varchar2(255),
+lname varchar2(255) not null,
+emailId varchar2(255) primary key,
+address varchar2(1000),
+password varchar2(255) not null,
+dateOfBirth date,
+phoneNumber varchar2(13),
+gender varchar2(2),
+pancard varchar2(12),
+aadhaar varchar2(14),
+nationality varchar2(20)
+
+);
+
+create table loan (
+applicationNumber varchar2(20) primary key,
+emailId CONSTRAINT emailId REFERENCES customer(emailId),
+loanAmount number(20,2) not null,
+tenure number(20, 2) not null,
+calculatedEmi number(20,2) not null,
+applicationStatus varchar2(20) not null,
+accountNo varchar2(13) default null,
+balance number(20, 2) default 0
+);
+
+create table document (
+emailId CONSTRAINT emailIdforVerification REFERENCES customer(emailId),
+applicationNumber constraint applicationId references loan(applicationNumber),
+panCard number(1,0) not null,
+aadharCard number(1,0) not null,
+voterId number(1,0) not null,
+salarySlip number(1,0) not null,
+LOA number(1,0) not null,
+NOC number(1,0) not null,
+agreement number(1,0) not null,
+eligible number(1,0) not null
+);
+
+create table documentLocation (
+emailId CONSTRAINT emailIdforLocation REFERENCES customer(emailId),
+applicationNumber constraint applicationIddoc references loan(applicationNumber),
+panCard varchar2(255) not null,
+aadharCard varchar2(255) not null,
+voterId varchar2(255) not null,
+salarySlip varchar2(255) not null,
+LOA varchar2(255) not null,
+NOC varchar2(255) not null,
+agreement varchar2(255) not null
+);
+
+
+create table employmentDetails(
+emailId CONSTRAINT emailIdforEmployment REFERENCES customer(emailId),
+applicationNumber constraint applicationIdemp references loan(applicationNumber),
+employmentType varchar2(255) not null,
+employerName varchar2(255) not null,
+retirementAge number(5, 2),
+monthlySalary number(12, 2) not null
+);
+
+create table propertyDetails(
+emailId CONSTRAINT emailIdforProperty REFERENCES customer(emailId),
+applicationNumber constraint applicationIpro references loan(applicationNumber),
+propertyLocation varchar2(1000) not null,
+propertyName varchar(255) not null,
+estimatedAmount number(20, 2) not null
+);
+
+create table adminlogin(
+username varchar(255),
+password varchar(255)
+)
+
+create table confirmationtable(
+  emailid constraint emailIdforConfirmation references customer(emailId),   
+    confirmationToken varchar(50) 
+    );
