@@ -12,8 +12,12 @@
     <li class="nav-item menu-item">
       <a class="nav-link" href="/loantracker">Loan Tracker</a>
     </li>
-      <li class="nav-item menu-item">
+      <!-- <li class="nav-item menu-item">
       <a class="nav-link" href="/login">Login</a>
+    </li>  -->
+      <li class="nav-item menu-item">
+      <a *ngIf="!loginService.isUserLoggedIn()" class="nav-link" href="/login">Login</a>
+      <a style="cursor: pointer;" *ngIf="loginService.isUserLoggedIn()" routerLink="/logout" class="nav-link">Logout</a>
     </li>
     <li>
       <li class="nav-item menu-item">

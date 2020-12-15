@@ -1,4 +1,4 @@
-<div class="jumbotron container">
+    <div class="jumbotron container">
     <h1>Loan Tracker</h1>      
     <p>Track the status of your loan at one click.</p>
 </div>
@@ -11,7 +11,7 @@
             <div class="form-group">
                 <label class="control-label col-sm-2">Email</label>
                 <div class="inputWithIcon inputIconBg">
-                    <input type="text" class="form-control form-control-sm" name="name" placeholder="abc@company.com"
+                    <input type="text" class="form-control form-control-sm" name="email" placeholder="abc@company.com"
                         [formControl]="emailControl">
 
                     <span *ngIf="emailControl.hasError('required') && emailControl.dirty" class="text-danger">Email
@@ -22,27 +22,21 @@
             </div>
 
             <div class="form-group">
-                <label class="control-label col-sm-2">Mobile</label>
-                <div>
-                    <input type="number" class="form-control form-control-sm" name="mobileno"
-                        placeholder="Enter Mobile No." [formControl]="mobilenoControl">
+                <label class="control-label col-sm-2">Application ID</label>
+                <div class="inputWithIcon inputIconBg">
+                    <input type="text" class="form-control form-control-sm" name="applicationid" placeholder="Enter application ID"
+                        [formControl]="applicationControl">
 
-                    <span *ngIf="mobilenoControl.hasError('required') && mobilenoControl.dirty" class="text-danger">Mobile Number
+                    <span *ngIf="applicationControl.hasError('required') && applicationControl.dirty" class="text-danger">Application ID required
                         required!!</span>
-                    <!-- <span *ngIf="anoControl.hasError('pattern') && anoControl.dirty"class = "text-danger">Invalid name </span> -->
-                    <span *ngIf="mobilenoControl.hasError('min') && mobilenoControl.dirty" class="text-danger">Mobile Number must be 10 digits 
-
-                    </span>
-                    <span *ngIf="mobilenoControl.hasError('max')" class="text-danger">Mobile Number must be max 10 digits 
-
-                    </span>
+                    <span *ngIf="(applicationControl.hasError('minLength') || applicationControl.hasError('maxLength')) && emailControl.dirty" class="text-danger">Enter valid Application ID</span>
                 </div>
             </div>
 
-            
             <div class="form-group">
-                <input type="submit" class="btn btn-primary"  name="submit" value="Register">
+                <input type="submit" class="btn btn-primary"  name="submit" value="Submit">
             </div>
+            
         </form>
     </div>
 </div>

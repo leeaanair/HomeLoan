@@ -28,14 +28,12 @@ export class ImageComponentComponent implements OnInit {
 
       if(this.sessionService.get("UserId") != null){
         
-          
           this.router.navigate(['/stepper']);
-          
 
       }
 
       else{
-          alert("Please login First!!")
+
           this.router.navigate(['/login']);
 
       }

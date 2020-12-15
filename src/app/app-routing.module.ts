@@ -16,6 +16,7 @@ import { ForgotPasswordComponentComponent } from './forgot-password-component/fo
 import { UploadFilesComponent } from './upload-files/upload-files.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { AdminVerificationComponent } from './admin-verification/admin-verification.component';
+import { LogoutComponent } from './logout/logout.component';
 
 
 
@@ -32,7 +33,8 @@ const routes: Routes = [
   {path: 'submitFiles', component: UploadFilesComponent},
   {path: 'aboutus', component:AboutComponent},
   {path: 'admindashboard', component: AdminDashboardComponent},
-  {path: 'adminverification', component: AdminVerificationComponent}
+  {path: 'adminverification', component: AdminVerificationComponent},
+  { path: 'logout', component: LogoutComponent },
 ];
 
 @NgModule({

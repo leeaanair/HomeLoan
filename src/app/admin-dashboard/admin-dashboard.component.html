@@ -6,34 +6,16 @@
       <thead>
         <tr>
           <th scope="col">Sr No</th>
-          <th scope="col">Application Number</th>
-          <th scope="col">Customer Name</th>
-         
+          <th scope="col">Application Number</th> 
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>id</td>
-          <td>First name + middle name + last name</td>
-         
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>id</td>
-          <td>First name + middle name + last name</td>
-         
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>id</td>
-          <td>First name + middle name + last name</td>
-         
+        <tr *ngFor="let id of applicationIdArray; let i = index"> 
+          <td>{{i+1}}</td>   
+          <td (click)="getUser(id)">{{id}}</td>
         </tr>
       </tbody>
     </table>
-
-  
   </div>
   </body>
 </html>

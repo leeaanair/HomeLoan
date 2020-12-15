@@ -48,7 +48,7 @@ input[type="text"]:focus {
   .inputWithIcon.inputIconBg i {
     background-color: rgb(141, 139, 139);
     color: #fff;
-    padding: 7.5px 0px;
+    padding: 8.5px 0px;
     border-radius: 4px 0 0 4px;
   }
   
