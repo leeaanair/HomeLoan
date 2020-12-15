@@ -50,10 +50,15 @@ onadminLogin(){
 
 gotoUserList(result) {
 
+
+
   if(result==2){
+  sessionStorage.setItem('username',  this.admin.username);
   this.router.navigate(['/admindashboard']);
 
+
 }
+
 else{
   this.isLoginRight = 0;
 }

@@ -1,4 +1,4 @@
-    <div class="jumbotron container">
+<div class="jumbotron container">
     <h1>Loan Tracker</h1>      
     <p>Track the status of your loan at one click.</p>
 </div>
@@ -24,12 +24,10 @@
             <div class="form-group">
                 <label class="control-label col-sm-2">Application ID</label>
                 <div class="inputWithIcon inputIconBg">
-                    <input type="text" class="form-control form-control-sm" name="applicationid" placeholder="Enter application ID"
-                        [formControl]="applicationControl">
+                    <input type="text" class="form-control form-control-sm" name="applicationid" placeholder="Enter application ID" [formControl]="applicationControl">
 
-                    <span *ngIf="applicationControl.hasError('required') && applicationControl.dirty" class="text-danger">Application ID required
-                        required!!</span>
-                    <span *ngIf="(applicationControl.hasError('minLength') || applicationControl.hasError('maxLength')) && emailControl.dirty" class="text-danger">Enter valid Application ID</span>
+                    <span *ngIf="applicationControl.hasError('required') && applicationControl.dirty" class="text-danger">Application ID required</span>
+                    <span *ngIf="(applicationControl.hasError('minlength') || applicationControl.hasError('maxlength')) && applicationControl.dirty" class="text-danger">Enter valid Application ID</span>
                 </div>
             </div>
 
@@ -39,14 +37,34 @@
             
         </form>
     </div>
+
+    <div *ngIf="statusAppears">
+  <div class="card" style="width:40rem;">
+   <table class="table table-bordered"> 
+    <tbody>
+      <tr>
+        <td width="43%"><b>Status</b></td>
+        <td>{{status}}</td>
+      </tr>
+      <tr *ngIf="balanceAppears">
+        <td><b>Account number</b></td>
+        <td>{{accountNumber}}</td>
+      </tr>
+      <tr *ngIf="balanceAppears">
+        <td><b>Balance</b></td>
+        <td>{{balance}}</td>
+      </tr>
+      <tr *ngIf="balanceAppears">
+        <td><b>EMI</b></td>
+        <td>{{emi}}
+        </td>
+      </tr>
+      <tr>
+    </tbody>
+  </table>
+   </div>
+</div>
+
 </div>
 
 
-<div *ngIf="!processing">
-    <mat-vertical-stepper linear  [selectedIndex]="currentStep">
-        <mat-step label="Sent ">Sent for verification</mat-step>
-        <mat-step label="Verified ">Verified and sent for final approval</mat-step>
-        <mat-step label="Approved/rejected">Approved/rejected</mat-step>
-        
-    </mat-vertical-stepper>
-</div>

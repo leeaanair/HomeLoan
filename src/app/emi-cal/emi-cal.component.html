@@ -1,7 +1,3 @@
-
-
-
-
     <div class="container">
       <div class="spacer">
         <div class="row">
@@ -14,7 +10,10 @@
                   <span class="left-title" style="color: #383475; font-weight: bold;">
                     Home Loan Amount
                   </span>
-                  <input type="text" style="width:10%;float:right;" class="form-control" (blur)="tbupdate(0)"
+                  <br>
+                  <br>
+                  
+                  <input type="text" style="float:right;" class="form-control" (blur)="tbupdate(0)"
                     [(ngModel)]="query.amount" placeholder="Loan Amount" name="pemi.highValue" />
                 </div>
                 <ngx-slider [(value)]="pemi.value" [options]="poptions" (userChangeEnd)="update()">
@@ -28,7 +27,9 @@
                   <span class="left-title" style="color: #383475; font-weight: bold;">
                     Interest Rate
                   </span>
-                  <input type="text" style="width:10%;float:right;" class="form-control" (blur)="tbupdate(1)"
+                  <br>
+                  <br>
+                  <input type="text" style="float:right;" class="form-control" (blur)="tbupdate(1)"
                     [(ngModel)]="query.interest" placeholder="Interest Rate" name="remi.highValue" />
                 </div>
                 <ngx-slider [(value)]="remi.value" [options]="roptions" (userChangeEnd)="update()">
@@ -40,8 +41,10 @@
               <div class="form-group">
                 <div class="col-md-10">
                   <span class="left-title" style="color: #383475; font-weight: bold;">Loan Tenure</span>
+                  <br>
+                  <br>
                   <input type="text" *ngIf="yrToggel" class="form-control" (blur)="tbupdate(2)"
-                    placeholder="Loan Tenure in Yr" [(ngModel)]="query.tenureYr" style="width:10%;float:right;">
+                    placeholder="Loan Tenure in Yr" [(ngModel)]="query.tenureYr" style="float:right;">
                   <input type="text" *ngIf="!yrToggel" class="form-control" (blur)="tbupdate(3)"
                     placeholder="Loan Tenure in Mo" [(ngModel)]="query.tenureMo" style="width:10%;float:right;">
                 </div>
@@ -61,52 +64,56 @@
     
     
             </div>
+          </div>
     
           </div>
-          <div class="col-lg-3">
-            <div class="well">
-    
-              <div class="jusify-center" >
-                <br>
-                <h5 style="color: #383475; font-weight: bold;">
-                  Loan EMI
-                </h5>
-                <span class="result">
-                  Rs {{result.emi || "--"}}
-                </span>
-              </div>
-    
-              <hr />
-    
-              <div>
-                <h5 style="color: #383475; font-weight: bold;">
-                  Total Interest Payable
-                </h5>
-                <span class="result">
-                  Rs {{result.interest || "--"}}
-                </span>
-              </div>
-    
-              <hr />
-              <div>
-                <h5 style="color: #383475; font-weight: bold;">
-                  Total Payment
-                </h5>
-                <h6 style="color: #383475; font-weight: bold;">
-                  (Principal + Interest)
-                </h6>
-                <span class="result">
-                  Rs {{result.total || "--"}}
-                </span>
-              </div>
-    
-    
-    
-            </div>
-          </div>
-        </div>
+
+         
+          
       </div>
     </div>
 
+    <div class="container">
+      <div class="col-lg-3">
+        <div class="well">
 
+          <div class="jusify-center" >
+            <br>
+            <h4 style="color: #383475; font-weight: bold;">
+              Loan EMI
+            </h4>
+            <span class="result">
+              Rs {{result.emi || "--"}}
+            </span>
+          </div>
+      
+          <hr />
+
+          <div>
+            <h4 style="color: #383475; font-weight: bold;">
+              Total Interest Payable
+            </h4>
+            <span class="result">
+              Rs {{result.interest || "--"}}
+            </span>
+          </div>
+
+          <hr />
+          <div>
+            <h4 style="color: #383475; font-weight: bold;">
+              Total Payment
+            </h4>
+            <h6 style="color: #383475; font-weight: bold;">
+              (Principal + Interest)
+            </h6>
+            <span class="result">
+              Rs {{result.total || "--"}}
+            </span>
+          </div>
+
+
+
+        </div>
+      </div>
+      
 

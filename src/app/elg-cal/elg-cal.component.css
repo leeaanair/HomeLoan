@@ -1,13 +1,13 @@
 .container{    
     
     box-sizing: content-box;  
-    width: 375px;
+    width: 300px;
     height: 300px;
     padding: 50px;  
     border: 5px solid #00A093;
     float: right;
     background-color: #E6F4F1;
-    margin-left: auto;
+    margin-left: 10px;
     margin-right: 10%;
     margin-top: 50px;
     

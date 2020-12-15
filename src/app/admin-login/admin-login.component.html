@@ -32,6 +32,11 @@
              <br>
              <!-- <a href="#">Forgot password?</a> -->
             </div>
+
+            <div class="alert" *ngIf="isLoginRight==0">
+         Incorrect Login Credentials!   
+            </div>
+            
           </table>
          </form>
         </div>

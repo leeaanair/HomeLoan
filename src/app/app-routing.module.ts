@@ -16,7 +16,8 @@ import { ForgotPasswordComponentComponent } from './forgot-password-component/fo
 import { UploadFilesComponent } from './upload-files/upload-files.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { AdminVerificationComponent } from './admin-verification/admin-verification.component';
-import { LogoutComponent } from './logout/logout.component';
+import {LogoutComponent } from './logout/logout.component'
+import{UserDashboardComponent} from './user-dashboard/user-dashboard.component';
 
 
 
@@ -34,7 +35,8 @@ const routes: Routes = [
   {path: 'aboutus', component:AboutComponent},
   {path: 'admindashboard', component: AdminDashboardComponent},
   {path: 'adminverification', component: AdminVerificationComponent},
-  { path: 'logout', component: LogoutComponent },
+  {path: 'logout', component:LogoutComponent},
+  {path: 'userdashboard', component: UserDashboardComponent}
 ];
 
 @NgModule({
@@ -43,5 +45,5 @@ const routes: Routes = [
 })
 export class AppRoutingModule { }
 
-export const routingComponent = []
+export const routingComponent = [];
 

@@ -50,7 +50,8 @@ import { CustomerServiceService } from './services/customer-service.service';
 import { SessionService } from './services/session.service';
 import { FilesArrayService } from './services/files-array.service';
 import { AdminLoginServiceService } from './services/adminlogin-service.service';
-import { LogoutComponent } from './logout/logout.component';
+import { CalculatorsComponent } from './calculators/calculators.component';
+import {LogoutComponent} from './logout/logout.component'
 
 @NgModule({
   declarations: [
@@ -77,6 +78,7 @@ import { LogoutComponent } from './logout/logout.component';
     HomeDetailsComponent,
     UserDashboardComponent,
     UserAppStatusComponent,
+    CalculatorsComponent,
     LogoutComponent
   ],
   imports: [
