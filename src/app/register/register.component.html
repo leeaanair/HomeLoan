@@ -12,6 +12,17 @@
                      <span *ngIf="firstnameControl.hasError('pattern') && firstnameControl.dirty"class = "text-danger">Invalid name</span>
                     </div>
                 </div>
+
+                <div class="form-group">
+                     <label>Middle Name</label>
+                     <div class="inputWithIcon inputIconBg">
+                     <input type="text" class="form-control form-control-sm" name="mname" placeholder="Middle Name" [formControl]="middlenameControl">
+                     <i class="fa fa-user fa-lg fa-fw" aria-hidden="true"></i>
+                     <span *ngIf="middlenameControl.hasError('pattern') && middlenameControl.dirty"class = "text-danger">Invalid name </span>
+                     <span *ngIf="!middlenameControl.hasError('pattern') && middlenameControl.hasError('minlength') && middlenameControl.dirty"class = "text-danger">name must be minimum of 3 letters </span>
+                    </div>
+                </div>
+
                     <div class="form-group">
                      <label>Last Name</label>
                      <div class="inputWithIcon inputIconBg">

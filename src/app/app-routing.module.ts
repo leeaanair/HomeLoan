@@ -17,12 +17,18 @@ import { UploadFilesComponent } from './upload-files/upload-files.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { AdminVerificationComponent } from './admin-verification/admin-verification.component';
 
+import { CalculatorsComponent } from './calculators/calculators.component';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
+
+
+import {UserDashboardComponent} from './user-dashboard/user-dashboard.component';
+import { LogoutComponent } from './logout/logout.component';
 
 
 
 
 const routes: Routes = [
-  {path: 'calculator', component: ElgCalComponent},
+  {path: 'calculator', component: CalculatorsComponent},
   {path: 'login', component:LoginregComponent},
   {path: 'adminlogin', component:AdminLoginComponent},
   {path: 'loantracker', component:LoanTrackerComponent},
@@ -32,7 +38,10 @@ const routes: Routes = [
   {path: 'submitFiles', component: UploadFilesComponent},
   {path: 'aboutus', component:AboutComponent},
   {path: 'admindashboard', component: AdminDashboardComponent},
-  {path: 'adminverification', component: AdminVerificationComponent}
+  {path: 'adminverification', component: AdminVerificationComponent},
+  {path: 'reset', component: ResetPasswordComponent},
+  {path: 'userdashboard', component: UserDashboardComponent},
+  {path: 'logout', component: LogoutComponent}
 ];
 
 @NgModule({

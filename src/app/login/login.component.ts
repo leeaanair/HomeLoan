@@ -57,8 +57,9 @@ export class LoginComponent implements OnInit {
   gotoUserList(result) {
 
       if(result==2){
-        sessionStorage.setItem('username', this.customer.emailId)
-        this.router.navigate(['/']);
+        sessionStorage.setItem('username', this.customer.emailId);
+        alert("Successfully Logged in");
+        this.router.navigate(['/userdashboard']);
 
     }
     else{

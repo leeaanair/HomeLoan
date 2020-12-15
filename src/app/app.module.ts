@@ -51,6 +51,8 @@ import { SessionService } from './services/session.service';
 import { FilesArrayService } from './services/files-array.service';
 import { AdminLoginServiceService } from './services/adminlogin-service.service';
 import { CalculatorsComponent } from './calculators/calculators.component';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
+import { LogoutComponent } from './logout/logout.component';
 
 @NgModule({
   declarations: [
@@ -77,7 +79,9 @@ import { CalculatorsComponent } from './calculators/calculators.component';
     HomeDetailsComponent,
     UserDashboardComponent,
     UserAppStatusComponent,
-    CalculatorsComponent
+    CalculatorsComponent,
+    ResetPasswordComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,

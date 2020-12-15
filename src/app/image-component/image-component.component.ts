@@ -26,9 +26,9 @@ export class ImageComponentComponent implements OnInit {
 
   apply(){
 
-      if(this.sessionService.get("UserId") != null){
+      if(sessionStorage.getItem("username") != null){
         
-          this.router.navigate(['/stepper']);
+          this.router.navigate(['/userdashboard']);
 
       }
 
