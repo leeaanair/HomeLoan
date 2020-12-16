@@ -22,13 +22,13 @@ export class AdminLoginServiceService {
   
   
     public login(admin: Admin) {
-      return this.http.post<Admin>(this.loginUrl, admin);
+      return this.http.post(this.loginUrl, admin);
     }
 
 
     public adminVerify(loan : Loan){
 
-    	return this.http.post<number>(this.adminVerifyUrl, loan);	
+    	return this.http.post(this.adminVerifyUrl, loan);	
     }
 
 
