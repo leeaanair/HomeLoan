@@ -57,6 +57,9 @@ public class HomeController {
 	
     @PersistenceContext
     private EntityManager entityManager;
+
+//	@Autowired
+//	private CustomerDetailDao customerDetailDao;
 	
 	@Autowired
 	private CustomerDao customerDao;
@@ -175,7 +178,7 @@ public class HomeController {
     		confirmationDao.save(confirmationTable);
     		
             SimpleMailMessage message = new SimpleMailMessage(); 
-            message.setFrom("leeaanair1@gmail.com");
+            message.setFrom("noreply@ltihomeloan.com");
             message.setTo(email); 
             message.setSubject("Reset password for HomeLoan"); 
             message.setText("Hello. This is the link to reset your password. \n http:localhost:4200/reset?token="+confirmationTable.getConfirmationToken());

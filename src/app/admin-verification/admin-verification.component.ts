@@ -186,13 +186,14 @@ export class AdminVerificationComponent implements OnInit {
 
 //(1+R)^n
 
-    var rate = (8.5*12)/100;
-    var top = Math.pow((1 + rate), this.tenure*12);
- //(1+R)^n - 1   
-    var bottom = top - 1;
+    var rate = 8.5/(12*100);
+    var top = Math.pow((1 + rate), (this.tenure*12));
+ // //(1+R)^n - 1   
+    var bottom = top-1;
     var sp = top / bottom;
     //P*R*sp(calculated above)
     this.loan.calculatedEmi = ((this.loanAmount * rate) * sp);
+    console.log("loan is " + this.loan.calculatedEmi);
 
     //this.loan.calculatedEmi = this.loanAmount*8.5*(Math.pow(1+8.5, this.tenure*12)/((Math.pow(1+8.5, this.tenure*12))-1))
 

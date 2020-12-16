@@ -29,16 +29,16 @@ export class CustomerServiceService {
   }
 
   public save(customer: Customer) {
-    return this.http.post<Customer>(this.customerUrl, customer);
+    return this.http.post(this.customerUrl, customer);
   }
 
   public login(customer: Customer) {
-    return this.http.post<Customer>(this.loginUrl, customer);
+    return this.http.post(this.loginUrl, customer);
   }
 
   public forgotPassword(forgot: ForgotPassword){
 
-      return this.http.post<ForgotPassword>(this.forgotPasswordUrl, forgot);
+      return this.http.post(this.forgotPasswordUrl, forgot);
 
 
   }
@@ -51,7 +51,7 @@ export class CustomerServiceService {
 
   public seeStatus(id, email): Observable<any> {
 
-      return this.http.get<Loan>(this.loanTrackerUrl+"/"+id+"/"+email);
+      return this.http.get(this.loanTrackerUrl+"/"+id+"/"+email);
 
   }
 

@@ -29,7 +29,7 @@ export class GetUserService {
 	//get user based on application id
   	getUser(id): Observable<any>{
 
-  		return this.http.get<Application>(this.getUserUrl+"/"+id);
+  		return this.http.get(this.getUserUrl+"/"+id);
 
   	}
 
