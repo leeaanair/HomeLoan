@@ -51,12 +51,12 @@ An Angular - Spring Boot Application which allows user to apply for loan and all
 #### EMI Calculator:
 1. User has to enter their loan amount and tenure and interest or can change it using the sliders
 2. EMI is then calculated using the formula :
-P*R*(1+R)^N/((1+R)^(N)-1)
+PxRx(1+R)^N/((1+R)^(N)-1)
 
 ### Eligibility calculator 
 1. User has to enter their monthly salary.
 2. Grantable loan is calculated by :
-60*0.6*monthly salary
+60x0.6xmonthly salary
 3. If your desired loan is less than the grantable loan, it can be accepted, else it will be rejected.
 
 ## Technology Stack
