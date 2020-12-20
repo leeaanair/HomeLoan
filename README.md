@@ -74,4 +74,4 @@ PxRx(1+R)^N/((1+R)^(N)-1)
 2. After unzipping the file, go to the folder
 3. Run terminal in that path, run
     `npm install`
-4. Run ng serve
+4. Run `ng serve`
