@@ -68,3 +68,10 @@ PxRx(1+R)^N/((1+R)^(N)-1)
 6. Spring Boot
 7. Oracle 
 8. Maven
+
+## How to run
+1. Download the code.
+2. After unzipping the file, go to the folder
+3. Run terminal in that path, run
+    `npm install`
+4. Run ng serve
